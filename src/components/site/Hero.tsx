@@ -39,18 +39,18 @@ const Hero = () => {
     >
       {/* Background image - astrologer right side full bleed */}
       <div className="absolute inset-0">
-        <div className="hero-image absolute inset-y-0 right-0 w-full lg:w-[62%]">
+        <div className="hero-image absolute inset-0">
           <img
             src={astrologerImg}
             alt="Astrologer Pandit Pradeep Ji"
-            className="w-full h-full object-cover object-center"
+            className="w-full h-full object-cover object-right lg:object-[70%_center]"
             loading="eager"
           />
-          {/* Left fade into navy */}
-          <div className="absolute inset-0 bg-gradient-to-r from-navy-deep via-navy-deep/80 lg:via-navy-deep/50 to-transparent" />
+          {/* Left fade into navy for text legibility */}
+          <div className="absolute inset-0 bg-gradient-to-r from-navy-deep via-navy-deep/85 to-navy-deep/20 lg:via-navy-deep/70 lg:to-transparent" />
           <div className="absolute inset-0 bg-gradient-to-t from-navy-deep/90 via-transparent to-navy-deep/40" />
           {/* Mobile darken */}
-          <div className="absolute inset-0 bg-navy-deep/60 lg:hidden" />
+          <div className="absolute inset-0 bg-navy-deep/50 lg:hidden" />
         </div>
       </div>
 
