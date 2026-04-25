@@ -19,14 +19,21 @@ const WhyUs = () => {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.from(".why-head > *", {
-        scrollTrigger: { trigger: ref.current, start: "top 80%" },
-        y: 30, opacity: 0, duration: 0.7, stagger: 0.1, ease: "power3.out",
-      });
-      gsap.from(".why-item", {
-        scrollTrigger: { trigger: ".why-grid", start: "top 80%" },
-        y: 40, opacity: 0, duration: 0.6, stagger: 0.08, ease: "power3.out",
-      });
+      gsap.fromTo(".why-head > *",
+        { y: 30, opacity: 0 },
+        {
+          y: 0, opacity: 1, duration: 0.7, stagger: 0.1, ease: "power3.out",
+          scrollTrigger: { trigger: ref.current, start: "top 85%", toggleActions: "play none none none" },
+        }
+      );
+      gsap.fromTo(".why-item",
+        { y: 40, opacity: 0 },
+        {
+          y: 0, opacity: 1, duration: 0.6, stagger: 0.08, ease: "power3.out",
+          scrollTrigger: { trigger: ".why-grid", start: "top 90%", toggleActions: "play none none none" },
+        }
+      );
+      ScrollTrigger.refresh();
     }, ref);
     return () => ctx.revert();
   }, []);

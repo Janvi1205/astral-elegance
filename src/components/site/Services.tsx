@@ -19,14 +19,21 @@ const Services = () => {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.from(".svc-head > *", {
-        scrollTrigger: { trigger: ref.current, start: "top 80%" },
-        y: 30, opacity: 0, duration: 0.7, stagger: 0.1, ease: "power3.out",
-      });
-      gsap.from(".svc-card", {
-        scrollTrigger: { trigger: ".svc-grid", start: "top 80%" },
-        y: 50, opacity: 0, duration: 0.7, stagger: 0.1, ease: "power3.out",
-      });
+      gsap.fromTo(".svc-head > *",
+        { y: 30, opacity: 0 },
+        {
+          y: 0, opacity: 1, duration: 0.7, stagger: 0.1, ease: "power3.out",
+          scrollTrigger: { trigger: ref.current, start: "top 85%", toggleActions: "play none none none" },
+        }
+      );
+      gsap.fromTo(".svc-card",
+        { y: 50, opacity: 0 },
+        {
+          y: 0, opacity: 1, duration: 0.7, stagger: 0.1, ease: "power3.out",
+          scrollTrigger: { trigger: ".svc-grid", start: "top 90%", toggleActions: "play none none none" },
+        }
+      );
+      ScrollTrigger.refresh();
     }, ref);
     return () => ctx.revert();
   }, []);

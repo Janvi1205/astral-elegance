@@ -17,18 +17,22 @@ const About = () => {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.from(".about-image", {
-        scrollTrigger: { trigger: ref.current, start: "top 75%" },
-        x: -60, opacity: 0, duration: 1, ease: "power3.out",
-      });
-      gsap.from(".about-text > *", {
-        scrollTrigger: { trigger: ref.current, start: "top 75%" },
-        y: 30, opacity: 0, duration: 0.8, stagger: 0.12, ease: "power3.out",
-      });
-      gsap.from(".about-stat", {
-        scrollTrigger: { trigger: ".about-stats", start: "top 85%" },
-        y: 40, opacity: 0, duration: 0.7, stagger: 0.15, ease: "back.out(1.4)",
-      });
+      gsap.fromTo(".about-image",
+        { x: -60, opacity: 0 },
+        { x: 0, opacity: 1, duration: 1, ease: "power3.out",
+          scrollTrigger: { trigger: ref.current, start: "top 80%", toggleActions: "play none none none" } }
+      );
+      gsap.fromTo(".about-text > *",
+        { y: 30, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.8, stagger: 0.12, ease: "power3.out",
+          scrollTrigger: { trigger: ref.current, start: "top 80%", toggleActions: "play none none none" } }
+      );
+      gsap.fromTo(".about-stat",
+        { y: 40, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.7, stagger: 0.15, ease: "back.out(1.4)",
+          scrollTrigger: { trigger: ".about-stats", start: "top 90%", toggleActions: "play none none none" } }
+      );
+      ScrollTrigger.refresh();
     }, ref);
     return () => ctx.revert();
   }, []);
