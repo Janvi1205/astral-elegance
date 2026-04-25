@@ -53,7 +53,6 @@ const Hero = () => {
           <div className="absolute inset-0 bg-navy-deep/50 lg:hidden" />
         </div>
       </div>
-      </div>
 
       {/* Stars */}
       <div className="absolute inset-0 star-bg opacity-80 animate-twinkle pointer-events-none" />
