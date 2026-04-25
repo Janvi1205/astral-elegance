@@ -37,21 +37,22 @@ const Hero = () => {
       id="home"
       className="relative min-h-screen overflow-hidden bg-navy-deep"
     >
-      {/* Background image - full bleed */}
+      {/* Background image - full bleed, seamless starry navy */}
       <div className="absolute inset-0">
         <div className="hero-image absolute inset-0">
           <img
             src={astrologerImg}
             alt="Astrologer Pandit Pradeep Ji"
-            className="w-full h-full object-cover object-[62%_center] sm:object-[66%_center] lg:object-center"
+            className="w-full h-full object-cover object-right"
             loading="eager"
           />
-          {/* Soft cinematic veil for text legibility without a hard split */}
-          <div className="absolute inset-0 bg-navy-deep/35" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_68%_42%,transparent_0%,hsl(var(--navy-deep)/0.08)_34%,hsl(var(--navy-deep)/0.62)_82%)]" />
-          <div className="absolute inset-0 bg-gradient-to-r from-navy-deep/72 via-navy-deep/28 to-navy-deep/12" />
-          <div className="absolute inset-0 bg-gradient-to-t from-navy-deep/92 via-transparent to-navy-deep/30" />
+          {/* Gentle left vignette to deepen the starry side for text legibility */}
+          <div className="absolute inset-0 bg-gradient-to-r from-navy-deep/70 via-navy-deep/20 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-navy-deep/80 via-transparent to-transparent" />
+          {/* Mobile darken */}
+          <div className="absolute inset-0 bg-navy-deep/50 lg:hidden" />
         </div>
+      </div>
       </div>
 
       {/* Stars */}
