@@ -35,22 +35,22 @@ const Hero = () => {
     <section
       ref={ref}
       id="home"
-      className="relative min-h-screen overflow-hidden bg-hero-gradient"
+      className="relative min-h-screen overflow-hidden bg-navy-deep"
     >
-      {/* Background image - astrologer right side full bleed */}
+      {/* Background image - full bleed */}
       <div className="absolute inset-0">
         <div className="hero-image absolute inset-0">
           <img
             src={astrologerImg}
             alt="Astrologer Pandit Pradeep Ji"
-            className="w-full h-full object-cover object-right lg:object-[70%_center]"
+            className="w-full h-full object-cover object-[62%_center] sm:object-[66%_center] lg:object-center"
             loading="eager"
           />
-          {/* Left fade into navy for text legibility */}
-          <div className="absolute inset-0 bg-gradient-to-r from-navy-deep via-navy-deep/85 to-navy-deep/20 lg:via-navy-deep/70 lg:to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-t from-navy-deep/90 via-transparent to-navy-deep/40" />
-          {/* Mobile darken */}
-          <div className="absolute inset-0 bg-navy-deep/50 lg:hidden" />
+          {/* Soft cinematic veil for text legibility without a hard split */}
+          <div className="absolute inset-0 bg-navy-deep/35" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_68%_42%,transparent_0%,hsl(var(--navy-deep)/0.08)_34%,hsl(var(--navy-deep)/0.62)_82%)]" />
+          <div className="absolute inset-0 bg-gradient-to-r from-navy-deep/72 via-navy-deep/28 to-navy-deep/12" />
+          <div className="absolute inset-0 bg-gradient-to-t from-navy-deep/92 via-transparent to-navy-deep/30" />
         </div>
       </div>
 
