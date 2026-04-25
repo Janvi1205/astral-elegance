@@ -88,20 +88,16 @@ const Hero = () => {
             </span>
           </div>
 
-          <h1 className="mt-7 font-serif leading-[1] text-ivory">
-            <span className="hero-title-line block text-5xl sm:text-6xl lg:text-7xl font-light">Welcome to</span>
+          <h1 className="mt-7 font-serif leading-[1.05] text-ivory">
+            <span className="hero-title-line block text-5xl sm:text-6xl lg:text-7xl font-medium">Discover Your</span>
             <span className="hero-title-line block text-6xl sm:text-7xl lg:text-8xl italic text-gradient-gold mt-2 font-medium">
-              Divya Jyotish
-            </span>
-            <span className="hero-title-line block text-2xl sm:text-3xl lg:text-4xl text-ivory/85 mt-4 font-light tracking-wide">
-              Wisdom of the Stars
+              Cosmic Path
             </span>
           </h1>
 
           <p className="hero-sub mt-7 text-base sm:text-lg text-ivory/75 max-w-xl leading-relaxed">
-            Get personalized Vedic astrology guidance for love, marriage, career, and life's
-            toughest challenges from Pandit Pradeep Ji — a renowned Jyotish Acharya with over
-            two decades of authentic spiritual practice.
+            Unlock the secrets of your birth chart with personalized Vedic astrology
+            consultations. Guidance for love, career, health & spiritual growth.
           </p>
 
           <div className="mt-10 flex flex-col sm:flex-row gap-4">
@@ -110,7 +106,7 @@ const Hero = () => {
               className="hero-cta group inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-gold-gradient text-navy-deep font-semibold shadow-gold hover:shadow-gold-lg hover:-translate-y-0.5 transition-all"
             >
               <Sparkles className="w-4 h-4" />
-              Book Now
+              Book My Consultation
             </a>
             <a
               href={WHATSAPP}
