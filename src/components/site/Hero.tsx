@@ -135,36 +135,7 @@ const Hero = () => {
           </div>
         </div>
 
-        {/* Floating decorative cards on right */}
-        <div className="hidden xl:block absolute right-10 top-1/3 space-y-4">
-          <div className="hero-floating-card px-5 py-3 rounded-2xl bg-navy-deep/60 backdrop-blur-md border border-gold/30 flex items-center gap-3 shadow-gold-lg">
-            <div className="w-10 h-10 rounded-full bg-gold-gradient flex items-center justify-center">
-              <Phone className="w-4 h-4 text-navy-deep" />
-            </div>
-            <div>
-              <div className="text-[10px] uppercase tracking-widest text-gold-soft">Available Now</div>
-              <div className="text-sm text-ivory">+91 99999 99999</div>
-            </div>
-          </div>
-        </div>
-
-        <div className="hidden xl:block absolute right-10 bottom-32">
-          <div className="hero-floating-card px-5 py-4 rounded-2xl bg-navy-deep/60 backdrop-blur-md border border-gold/30 max-w-[220px] shadow-gold-lg">
-            <div className="flex items-center gap-1 mb-2">
-              {[...Array(5)].map((_, i) => (
-                <Star key={i} className="w-3 h-3 fill-gold text-gold" />
-              ))}
-            </div>
-            <p className="text-xs text-ivory/85 italic leading-snug">
-              "His guidance changed my life completely."
-            </p>
-            <div className="text-[10px] text-gold-soft mt-2 uppercase tracking-widest">— Verified Client</div>
-          </div>
-        </div>
       </div>
-
-      {/* Bottom fade */}
-      <div className="absolute bottom-0 inset-x-0 h-32 bg-gradient-to-b from-transparent to-background z-10 pointer-events-none" />
     </section>
   );
 };
