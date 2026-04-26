@@ -1,7 +1,8 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
-import { Sparkles, MessageCircle, Star, Phone } from "lucide-react";
+import { Sparkles, MessageCircle, Star } from "lucide-react";
 import astrologerImg from "@/assets/astrologer-hero.jpg";
+import astrologerMobileImg from "@/assets/astrologer-hero-mobile.jpg";
 
 const WHATSAPP = "https://wa.me/919999999999?text=Hello%2C%20I%20would%20like%20to%20book%20a%20consultation.";
 
@@ -16,8 +17,7 @@ const Hero = () => {
         .from(".hero-sub", { y: 20, opacity: 0, duration: 0.7 }, "-=0.5")
         .from(".hero-cta", { y: 20, opacity: 0, duration: 0.6, stagger: 0.12 }, "-=0.4")
         .from(".hero-trust", { y: 20, opacity: 0, duration: 0.6 }, "-=0.3")
-        .from(".hero-image", { scale: 1.1, opacity: 0, duration: 1.4, ease: "power2.out" }, 0)
-        .from(".hero-floating-card", { y: 30, opacity: 0, duration: 0.8, stagger: 0.15 }, "-=0.6");
+        .from(".hero-image", { scale: 1.1, opacity: 0, duration: 1.4, ease: "power2.out" }, 0);
 
       gsap.to(".hero-particle", {
         y: -20,
@@ -35,10 +35,10 @@ const Hero = () => {
     <section
       ref={ref}
       id="home"
-      className="relative min-h-screen overflow-hidden bg-navy-deep"
+      className="relative overflow-hidden bg-navy-deep lg:min-h-screen"
     >
-      {/* Background image - full bleed, seamless starry navy */}
-      <div className="absolute inset-0">
+      {/* ===== Desktop / tablet (lg+) full-bleed background image ===== */}
+      <div className="hidden lg:block absolute inset-0">
         <div className="hero-image absolute inset-0">
           <img
             src={astrologerImg}
@@ -46,18 +46,13 @@ const Hero = () => {
             className="w-full h-full object-cover object-right"
             loading="eager"
           />
-          {/* Gentle left vignette to deepen the starry side for text legibility */}
           <div className="absolute inset-0 bg-gradient-to-r from-navy-deep/70 via-navy-deep/20 to-transparent" />
           <div className="absolute inset-0 bg-gradient-to-t from-navy-deep/80 via-transparent to-transparent" />
-          {/* Mobile darken */}
-          <div className="absolute inset-0 bg-navy-deep/50 lg:hidden" />
         </div>
       </div>
 
-      {/* Stars */}
+      {/* Stars + glow (shared) */}
       <div className="absolute inset-0 star-bg opacity-80 animate-twinkle pointer-events-none" />
-
-      {/* Floating golden particles */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         {[...Array(12)].map((_, i) => (
           <div
@@ -73,13 +68,82 @@ const Hero = () => {
           />
         ))}
       </div>
-
-      {/* Glow orbs */}
       <div className="absolute -top-32 -left-32 w-[500px] h-[500px] rounded-full bg-gold/15 blur-[120px] pointer-events-none" />
       <div className="absolute bottom-0 left-1/3 w-[500px] h-[400px] rounded-full bg-gold/10 blur-[140px] pointer-events-none" />
 
-      {/* Content */}
-      <div className="container relative z-10 pt-36 pb-24 lg:pt-44 lg:pb-32 min-h-screen flex items-center">
+      {/* ===== Mobile / tablet stacked layout (below lg) ===== */}
+      <div className="lg:hidden relative z-10 pt-20 pb-10">
+        <div className="hero-image relative mx-auto w-full max-w-md aspect-[7/10]">
+          <img
+            src={astrologerMobileImg}
+            alt="Astrologer Pandit Pradeep Ji"
+            className="w-full h-full object-contain object-center"
+            loading="eager"
+          />
+          {/* Seamless blend into navy background */}
+          <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-navy-deep via-navy-deep/70 to-transparent pointer-events-none" />
+          <div className="absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r from-navy-deep/80 to-transparent pointer-events-none" />
+          <div className="absolute inset-y-0 right-0 w-1/4 bg-gradient-to-l from-navy-deep/80 to-transparent pointer-events-none" />
+        </div>
+
+        <div className="container mt-10 text-center">
+          <div className="hero-badge inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gold/15 border border-gold/40 backdrop-blur-md">
+            <span className="w-1.5 h-1.5 rounded-full bg-gold animate-pulse" />
+            <span className="text-[10px] tracking-[0.25em] uppercase text-gold font-semibold">
+              Trusted Vedic Astrologer
+            </span>
+          </div>
+
+          <h1 className="mt-6 font-serif leading-[1.05] text-ivory">
+            <span className="hero-title-line block text-4xl sm:text-5xl font-medium">Discover Your</span>
+            <span className="hero-title-line block text-5xl sm:text-6xl italic text-gradient-gold mt-2 font-medium">
+              Cosmic Path
+            </span>
+          </h1>
+
+          <p className="hero-sub mt-5 text-base text-ivory/75 max-w-md mx-auto leading-relaxed">
+            Unlock the secrets of your birth chart with personalized Vedic astrology
+            consultations. Guidance for love, career, health & spiritual growth.
+          </p>
+
+          <div className="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
+            <a
+              href="#contact"
+              className="hero-cta inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-gold-gradient text-navy-deep font-semibold shadow-gold hover:shadow-gold-lg transition-all"
+            >
+              <Sparkles className="w-4 h-4" />
+              Book Now
+            </a>
+            <a
+              href={WHATSAPP}
+              target="_blank"
+              rel="noreferrer"
+              className="hero-cta inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full border border-gold/40 text-ivory hover:bg-gold/10 hover:border-gold transition-all backdrop-blur-md bg-navy-deep/30"
+            >
+              <MessageCircle className="w-5 h-5 text-gold" />
+              WhatsApp
+            </a>
+          </div>
+
+          <div className="hero-trust mt-9 flex flex-wrap items-center justify-center gap-x-6 gap-y-3 text-ivory/80">
+            <div className="flex items-center gap-2">
+              <div className="flex">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="w-4 h-4 fill-gold text-gold" />
+                ))}
+              </div>
+              <span className="text-sm"><span className="text-gold font-semibold">4.9/5</span> Rated</span>
+            </div>
+            <div className="h-4 w-px bg-gold/30 hidden sm:block" />
+            <div className="text-sm">
+              <span className="text-gold font-semibold">25,000+</span> Lives Transformed
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* ===== Desktop content (lg+ only) ===== */}
+      <div className="hidden lg:flex container relative z-10 pt-44 pb-32 min-h-screen items-center">
         <div className="max-w-2xl">
           <div className="hero-badge inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gold/15 border border-gold/40 backdrop-blur-md">
             <span className="w-1.5 h-1.5 rounded-full bg-gold animate-pulse" />
@@ -89,13 +153,13 @@ const Hero = () => {
           </div>
 
           <h1 className="mt-7 font-serif leading-[1.05] text-ivory">
-            <span className="hero-title-line block text-5xl sm:text-6xl lg:text-7xl font-medium">Discover Your</span>
-            <span className="hero-title-line block text-6xl sm:text-7xl lg:text-8xl italic text-gradient-gold mt-2 font-medium">
+            <span className="hero-title-line block text-6xl lg:text-7xl font-medium">Discover Your</span>
+            <span className="hero-title-line block text-7xl lg:text-8xl italic text-gradient-gold mt-2 font-medium">
               Cosmic Path
             </span>
           </h1>
 
-          <p className="hero-sub mt-7 text-base sm:text-lg text-ivory/75 max-w-xl leading-relaxed">
+          <p className="hero-sub mt-7 text-lg text-ivory/75 max-w-xl leading-relaxed">
             Unlock the secrets of your birth chart with personalized Vedic astrology
             consultations. Guidance for love, career, health & spiritual growth.
           </p>
@@ -134,37 +198,7 @@ const Hero = () => {
             </div>
           </div>
         </div>
-
-        {/* Floating decorative cards on right */}
-        <div className="hidden xl:block absolute right-10 top-1/3 space-y-4">
-          <div className="hero-floating-card px-5 py-3 rounded-2xl bg-navy-deep/60 backdrop-blur-md border border-gold/30 flex items-center gap-3 shadow-gold-lg">
-            <div className="w-10 h-10 rounded-full bg-gold-gradient flex items-center justify-center">
-              <Phone className="w-4 h-4 text-navy-deep" />
-            </div>
-            <div>
-              <div className="text-[10px] uppercase tracking-widest text-gold-soft">Available Now</div>
-              <div className="text-sm text-ivory">+91 99999 99999</div>
-            </div>
-          </div>
-        </div>
-
-        <div className="hidden xl:block absolute right-10 bottom-32">
-          <div className="hero-floating-card px-5 py-4 rounded-2xl bg-navy-deep/60 backdrop-blur-md border border-gold/30 max-w-[220px] shadow-gold-lg">
-            <div className="flex items-center gap-1 mb-2">
-              {[...Array(5)].map((_, i) => (
-                <Star key={i} className="w-3 h-3 fill-gold text-gold" />
-              ))}
-            </div>
-            <p className="text-xs text-ivory/85 italic leading-snug">
-              "His guidance changed my life completely."
-            </p>
-            <div className="text-[10px] text-gold-soft mt-2 uppercase tracking-widest">— Verified Client</div>
-          </div>
-        </div>
       </div>
-
-      {/* Bottom fade */}
-      <div className="absolute bottom-0 inset-x-0 h-32 bg-gradient-to-b from-transparent to-background z-10 pointer-events-none" />
     </section>
   );
 };

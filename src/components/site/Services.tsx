@@ -1,17 +1,49 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { Heart, Briefcase, Users, Sparkles, Moon, Gem } from "lucide-react";
+
+import svcLove from "@/assets/svc-love.jpg";
+import svcMarriage from "@/assets/svc-marriage.jpg";
+import svcFamily from "@/assets/svc-family.jpg";
+import svcCouple from "@/assets/svc-couple.jpg";
+import svcCareer from "@/assets/svc-career.jpg";
+import svcVashikaran from "@/assets/svc-vashikaran.jpg";
 
 gsap.registerPlugin(ScrollTrigger);
 
+const WHATSAPP = "https://wa.me/919999999999?text=Hello%2C%20I%20would%20like%20to%20book%20a%20consultation.";
+
 const services = [
-  { icon: Heart, title: "Love Problem Solution", desc: "Reunite with your loved ones and overcome misunderstandings with proven Vedic remedies." },
-  { icon: Users, title: "Marriage Astrology", desc: "Kundli matching, timing of marriage, and harmony solutions for a blessed union." },
-  { icon: Briefcase, title: "Career & Business", desc: "Discover your true calling, ideal profession, and the right time for major decisions." },
-  { icon: Gem, title: "Gemstone Guidance", desc: "Authentic gemstone recommendations tailored to your planetary configuration." },
-  { icon: Moon, title: "Kundli & Horoscope", desc: "Detailed birth chart analysis revealing strengths, challenges, and destiny." },
-  { icon: Sparkles, title: "Vastu & Remedies", desc: "Energetic alignment of home and workspace with personalized spiritual remedies." },
+  {
+    title: "Love Problem Solution",
+    desc: "Overcome heartbreak, misunderstandings, and relationship obstacles with powerful remedies.",
+    img: svcLove,
+  },
+  {
+    title: "Love Marriage Specialist",
+    desc: "Get expert guidance and astrological support for inter-caste and love marriages.",
+    img: svcMarriage,
+  },
+  {
+    title: "Family Problem Solution",
+    desc: "Resolve family disputes, bring peace, and restore harmony in your household.",
+    img: svcFamily,
+  },
+  {
+    title: "Husband Wife Problem",
+    desc: "Resolve disputes, rebuild trust, and bring harmony back to your marriage.",
+    img: svcCouple,
+  },
+  {
+    title: "Career & Business",
+    desc: "Unlock professional growth, financial stability, and success aligned with your stars.",
+    img: svcCareer,
+  },
+  {
+    title: "Vashikaran Specialist",
+    desc: "Ancient Vedic vashikaran solutions for love, attraction, and relationship challenges.",
+    img: svcVashikaran,
+  },
 ];
 
 const Services = () => {
@@ -19,17 +51,27 @@ const Services = () => {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.fromTo(".svc-head > *",
+      gsap.fromTo(
+        ".svc-head > *",
         { y: 30, opacity: 0 },
         {
-          y: 0, opacity: 1, duration: 0.7, stagger: 0.1, ease: "power3.out",
+          y: 0,
+          opacity: 1,
+          duration: 0.7,
+          stagger: 0.1,
+          ease: "power3.out",
           scrollTrigger: { trigger: ref.current, start: "top 85%", toggleActions: "play none none none" },
         }
       );
-      gsap.fromTo(".svc-card",
+      gsap.fromTo(
+        ".svc-card",
         { y: 50, opacity: 0 },
         {
-          y: 0, opacity: 1, duration: 0.7, stagger: 0.1, ease: "power3.out",
+          y: 0,
+          opacity: 1,
+          duration: 0.7,
+          stagger: 0.1,
+          ease: "power3.out",
           scrollTrigger: { trigger: ".svc-grid", start: "top 90%", toggleActions: "play none none none" },
         }
       );
@@ -42,37 +84,46 @@ const Services = () => {
     <section ref={ref} id="services" className="relative py-24 lg:py-32 bg-muted/40">
       <div className="container">
         <div className="svc-head text-center max-w-2xl mx-auto">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gold/10 border border-gold/30">
-            <div className="w-1.5 h-1.5 rounded-full bg-gold" />
-            <span className="text-xs tracking-[0.2em] uppercase text-navy/70 font-medium">Our Services</span>
-          </div>
-          <h2 className="mt-5 font-serif text-4xl sm:text-5xl lg:text-6xl text-navy leading-[1.1]">
-            Astrology Solutions for <span className="italic text-gradient-gold">Every Path</span>
+          <span className="text-xs tracking-[0.3em] uppercase text-gold font-semibold">
+            What I Offer
+          </span>
+          <h2 className="mt-3 font-serif text-4xl sm:text-5xl lg:text-6xl text-navy leading-[1.1]">
+            My <span className="italic text-gradient-gold">Services</span>
           </h2>
-          <div className="gold-divider mx-auto my-7 w-24" />
-          <p className="text-muted-foreground text-lg">
-            Time-honored Vedic wisdom applied to your unique chart — for clarity at every crossroad.
-          </p>
         </div>
 
-        <div className="svc-grid mt-16 grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+        <div className="svc-grid mt-14 grid sm:grid-cols-2 lg:grid-cols-3 gap-7">
           {services.map((s) => (
-            <div
+            <article
               key={s.title}
-              className="svc-card group relative p-8 rounded-3xl bg-card border border-border hover:border-gold/40 shadow-card hover:shadow-gold-lg hover:-translate-y-2 transition-all duration-500 overflow-hidden"
+              className="svc-card group flex flex-col rounded-2xl bg-card border border-border overflow-hidden shadow-card hover:shadow-gold-lg hover:-translate-y-1.5 transition-all duration-500"
             >
-              <div className="absolute -top-20 -right-20 w-40 h-40 bg-gold/10 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity" />
-              <div className="relative">
-                <div className="w-16 h-16 rounded-2xl bg-gold-gradient flex items-center justify-center shadow-gold mb-6 group-hover:scale-110 group-hover:rotate-6 transition-transform">
-                  <s.icon className="w-7 h-7 text-navy-deep" />
-                </div>
-                <h3 className="font-serif text-2xl text-navy mb-3">{s.title}</h3>
-                <p className="text-muted-foreground leading-relaxed">{s.desc}</p>
-                <div className="mt-6 flex items-center gap-2 text-sm font-medium text-gold opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all">
-                  Learn more <span>→</span>
+              <div className="relative h-52 overflow-hidden">
+                <img
+                  src={s.img}
+                  alt={s.title}
+                  loading="lazy"
+                  width={1024}
+                  height={768}
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-navy/40 via-transparent to-transparent" />
+              </div>
+              <div className="flex flex-col flex-1 p-6">
+                <h3 className="font-serif text-2xl text-navy">{s.title}</h3>
+                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{s.desc}</p>
+                <div className="mt-auto pt-6">
+                  <a
+                    href={WHATSAPP}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center justify-center px-6 py-2.5 rounded-full bg-gold-gradient text-navy-deep text-sm font-semibold shadow-gold hover:shadow-gold-lg hover:-translate-y-0.5 transition-all"
+                  >
+                    Book Now
+                  </a>
                 </div>
               </div>
-            </div>
+            </article>
           ))}
         </div>
       </div>
