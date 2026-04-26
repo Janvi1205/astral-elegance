@@ -1,48 +1,49 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { WhatsAppIcon } from "../WhatsAppIcon";
 
-import svcLove from "@/assets/svc-love.jpg";
-import svcMarriage from "@/assets/svc-marriage.jpg";
-import svcFamily from "@/assets/svc-family.jpg";
-import svcCouple from "@/assets/svc-couple.jpg";
-import svcCareer from "@/assets/svc-career.jpg";
-import svcVashikaran from "@/assets/svc-vashikaran.jpg";
+import svcLove from "@/assets/svc-love-harmony.png";
+import svcCareer from "@/assets/svc-career-breakthrough.png";
+import svcLife from "@/assets/svc-life-prediction.png";
+import svcLegal from "@/assets/svc-legal-guidance.png";
+import svcNumerology from "@/assets/svc-numerology.png";
+import svcVastu from "@/assets/svc-vastu.png";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const WHATSAPP = "https://wa.me/919999999999?text=Hello%2C%20I%20would%20like%20to%20book%20a%20consultation.";
+const WHATSAPP = "https://wa.me/919717721217?text=Hello%2C%20I%20would%20like%20to%20book%20a%20consultation.";
 
 const services = [
   {
-    title: "Love Problem Solution",
-    desc: "Overcome heartbreak, misunderstandings, and relationship obstacles with powerful remedies.",
+    title: "Love and marriage harmony",
+    desc: "Recover lost love, resolve marital conflicts, and bring lasting harmony to your relationships with Vedic remedies.",
     img: svcLove,
   },
   {
-    title: "Love Marriage Specialist",
-    desc: "Get expert guidance and astrological support for inter-caste and love marriages.",
-    img: svcMarriage,
-  },
-  {
-    title: "Family Problem Solution",
-    desc: "Resolve family disputes, bring peace, and restore harmony in your household.",
-    img: svcFamily,
-  },
-  {
-    title: "Husband Wife Problem",
-    desc: "Resolve disputes, rebuild trust, and bring harmony back to your marriage.",
-    img: svcCouple,
-  },
-  {
-    title: "Career & Business",
-    desc: "Unlock professional growth, financial stability, and success aligned with your stars.",
+    title: "Career and Business Breakthrough",
+    desc: "Unlock professional success, overcome financial hurdles, and achieve massive breakthroughs in your business journey.",
     img: svcCareer,
   },
   {
-    title: "Vashikaran Specialist",
-    desc: "Ancient Vedic vashikaran solutions for love, attraction, and relationship challenges.",
-    img: svcVashikaran,
+    title: "Life prediction",
+    desc: "Unveil your future path with accurate horoscope analysis, helping you prepare for opportunities and challenges ahead.",
+    img: svcLife,
+  },
+  {
+    title: "Legal guidance",
+    desc: "Get spiritual and astrological support to resolve complex legal disputes and court cases with divine insights.",
+    img: svcLegal,
+  },
+  {
+    title: "Numerology Consultation",
+    desc: "Decode the power of numbers in your life to align your vibrations with success, health, and prosperity.",
+    img: svcNumerology,
+  },
+  {
+    title: "Vastu Consultation",
+    desc: "Harmonize your living and working spaces to attract positive energy, abundance, and peace of mind.",
+    img: svcVastu,
   },
 ];
 
@@ -103,6 +104,7 @@ const Services = () => {
                   src={s.img}
                   alt={s.title}
                   loading="lazy"
+                  decoding="async"
                   width={1024}
                   height={768}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
@@ -117,8 +119,9 @@ const Services = () => {
                     href={WHATSAPP}
                     target="_blank"
                     rel="noreferrer"
-                    className="inline-flex items-center justify-center px-6 py-2.5 rounded-full bg-gold-gradient text-navy-deep text-sm font-semibold shadow-gold hover:shadow-gold-lg hover:-translate-y-0.5 transition-all"
+                    className="inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-full bg-gold-gradient text-navy-deep text-sm font-semibold shadow-gold hover:shadow-gold-lg hover:-translate-y-0.5 transition-all"
                   >
+                    <WhatsAppIcon className="w-4 h-4" />
                     Book Now
                   </a>
                 </div>

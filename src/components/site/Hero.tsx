@@ -1,10 +1,11 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { Sparkles, MessageCircle, Star } from "lucide-react";
+import { WhatsAppIcon } from "../WhatsAppIcon";
 import astrologerImg from "@/assets/astrologer-hero.jpg";
 import astrologerCenteredImg from "@/assets/astrologer-hero-mobile.jpg";
 
-const WHATSAPP = "https://wa.me/919999999999?text=Hello%2C%20I%20would%20like%20to%20book%20a%20consultation.";
+const WHATSAPP = "https://wa.me/919717721217?text=Hello%2C%20I%20would%20like%20to%20book%20a%20consultation.";
 
 const Hero = () => {
   const ref = useRef<HTMLElement>(null);
@@ -41,9 +42,13 @@ const Hero = () => {
         <div className="hero-image absolute inset-0">
           <img
             src={astrologerImg}
-            alt="Astrologer Pandit Pradeep Ji"
+            alt="Astrologer Pradeep Malhotra Ji"
             className="w-full h-full object-cover object-right"
             loading="eager"
+            decoding="async"
+            fetchpriority="high"
+            width={1920}
+            height={1080}
           />
           <div className="absolute inset-0 bg-gradient-to-r from-navy-deep/70 via-navy-deep/20 to-transparent" />
           <div className="absolute inset-0 bg-gradient-to-t from-navy-deep/80 via-transparent to-transparent" />
@@ -76,9 +81,13 @@ const Hero = () => {
         <div className="hero-image relative mx-auto w-full aspect-[4/5] overflow-hidden">
           <img
             src={astrologerCenteredImg}
-            alt="Astrologer Pandit Pradeep Ji"
+            alt="Astrologer Pradeep Malhotra Ji"
             className="w-full h-full object-cover object-[center_15%]"
             loading="eager"
+            decoding="async"
+            fetchpriority="high"
+            width={800}
+            height={1000}
           />
           {/* Intense Edge Blending Gradients - All 4 sides */}
           <div className="absolute inset-x-0 top-0 h-1/4 bg-gradient-to-b from-navy-deep via-navy-deep/60 to-transparent pointer-events-none" />
@@ -122,7 +131,7 @@ const Hero = () => {
               rel="noreferrer"
               className="hero-cta hero-cta-mobile inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full border border-gold/40 text-ivory hover:bg-gold/10 hover:border-gold transition-all backdrop-blur-md bg-navy-deep/30"
             >
-              <MessageCircle className="w-5 h-5 text-gold" />
+              <WhatsAppIcon className="w-5 h-5 text-gold" />
               WhatsApp
             </a>
           </div>
@@ -134,11 +143,11 @@ const Hero = () => {
                   <Star key={i} className="w-4 h-4 fill-gold text-gold" />
                 ))}
               </div>
-              <span className="text-sm"><span className="text-gold font-semibold">4.9/5</span> Rated</span>
+              <span className="text-sm"><span className="text-gold font-semibold">5/5</span> Rated</span>
             </div>
             <div className="h-4 w-px bg-gold/30 hidden sm:block" />
             <div className="text-sm">
-              <span className="text-gold font-semibold">25,000+</span> Lives Transformed
+              <span className="text-gold font-semibold">1,000+</span> Lives Transformed
             </div>
           </div>
         </div>
@@ -179,7 +188,7 @@ const Hero = () => {
               rel="noreferrer"
               className="hero-cta hero-cta-desktop inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full border border-gold/40 text-ivory hover:bg-gold/10 hover:border-gold transition-all backdrop-blur-md bg-navy-deep/30 relative z-50 opacity-100"
             >
-              <MessageCircle className="w-5 h-5 text-gold" />
+              <WhatsAppIcon className="w-5 h-5 text-gold" />
               Chat on WhatsApp
             </a>
           </div>
@@ -191,11 +200,11 @@ const Hero = () => {
                   <Star key={i} className="w-4 h-4 fill-gold text-gold" />
                 ))}
               </div>
-              <span className="text-sm"><span className="text-gold font-semibold">4.9/5</span> Rated</span>
+              <span className="text-sm"><span className="text-gold font-semibold">5/5</span> Rated</span>
             </div>
             <div className="h-4 w-px bg-gold/30 hidden sm:block" />
             <div className="text-sm">
-              <span className="text-gold font-semibold">25,000+</span> Lives Transformed
+              <span className="text-gold font-semibold">1,000+</span> Lives Transformed
             </div>
           </div>
         </div>

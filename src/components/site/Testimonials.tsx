@@ -7,27 +7,57 @@ gsap.registerPlugin(ScrollTrigger);
 
 const reviews = [
   {
-    name: "Ananya Sharma",
-    role: "Mumbai",
-    text: "Pandit Ji's guidance brought my marriage back from the brink. His remedies are simple yet so powerful. I can't thank him enough.",
+    name: "Meenu",
+    role: "Happy Client",
+    text: "Highly recommended. Most accurate predictions and resolved all my queries with effective remedies.",
     rating: 5,
   },
   {
-    name: "Rohit Verma",
-    role: "Entrepreneur, Delhi",
-    text: "His career predictions were astonishingly accurate. The business muhurat he chose led to my biggest deal yet. Highly recommended.",
+    name: "Gaurav Singhal",
+    role: "Honest Review",
+    text: "Thank you for detailed and calm study & discussion. Really appreciate the advise given.",
     rating: 5,
   },
   {
-    name: "Priya Iyer",
-    role: "Bangalore",
-    text: "I was skeptical, but the precision of his Kundli reading shocked me. Every word felt like he knew my life. Truly gifted.",
+    name: "Deepak Kumar",
+    role: "Best Astrology Solution",
+    text: "Best Astrology Solution with best and easy remedies.",
     rating: 5,
   },
   {
-    name: "Vikram Singh",
-    role: "London",
-    text: "Even from abroad, his consultations transformed my outlook. Honest, calm, and deeply spiritual — a rare combination today.",
+    name: "Anil Garg",
+    role: "Verified Client",
+    text: "It was truly worth talking to him and very true results are given",
+    rating: 5,
+  },
+  {
+    name: "Deepika bhargava",
+    role: "Detailed Analysis",
+    text: "Very detailed and to the point... takes you through your inner self and gives a hope and guidance and helps to know small small details and what is best for you and how things can be improved and be effective",
+    rating: 5,
+  },
+  {
+    name: "Keshav Adlakha",
+    role: "Professional Service",
+    text: "I had the pleasure of availing Jyotish services from Pradeep Ji, and I must say, his expertise is truly remarkable. He takes the time to thoroughly explain every detail of your horoscope, addressing each issue with clarity and confidence",
+    rating: 5,
+  },
+  {
+    name: "Parth Khattar",
+    role: "Highly Recommended",
+    text: "Pradeep ji explains the things related to horoscope really well and elaborates all the issues regardless of any hesitations and the remedies are very effective. Highly Recommended for all",
+    rating: 5,
+  },
+  {
+    name: "Bawa Sandhu",
+    role: "Detailed Guidance",
+    text: "The amazing thing about Pradeep Ji is that the way he explains things n tells people about their future is so accurate that you can’t even imagine. The small small solution (remedies) for your problems are easy to do.",
+    rating: 5,
+  },
+  {
+    name: "Sushhmita Siingh",
+    role: "Authentic Reading",
+    text: "Very authentic and genuine reading is provided,with personal touch,which is rare nowadays. Big names doesn't matter, authenticity matters",
     rating: 5,
   },
 ];
@@ -91,7 +121,7 @@ const Testimonials = () => {
               ))}
             </div>
 
-            <p key={r.name} className="text-center text-lg lg:text-xl text-ivory/90 font-serif italic leading-relaxed animate-fade-in">
+            <p key={r.name} className="text-center text-lg lg:text-xl text-ivory/90 font-serif leading-relaxed animate-fade-in">
               "{r.text}"
             </p>
 

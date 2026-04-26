@@ -1,15 +1,15 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { Quote, Sparkles } from "lucide-react";
 import astrologerImg from "@/assets/astrologer-stage.jpg";
-import { Sparkles } from "lucide-react";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const stats = [
-  { value: "20+", label: "Years Experience" },
-  { value: "25K+", label: "Happy Clients" },
-  { value: "98%", label: "Satisfaction" },
+  { value: "10+", label: "Years Experience" },
+  { value: "1K+", label: "Happy Clients" },
+  { value: "100%", label: "Satisfaction" },
 ];
 
 const About = () => {
@@ -49,19 +49,17 @@ const About = () => {
         {/* Image */}
         <div className="about-image relative">
           <div className="absolute -inset-4 bg-gold-gradient opacity-20 blur-2xl rounded-3xl" />
-          <div className="relative rounded-3xl overflow-hidden shadow-elegant border border-gold/30 aspect-[4/5]">
-            <img src={astrologerImg} alt="Pandit Pradeep speaking" className="w-full h-full object-cover" />
+          <div className="relative rounded-3xl overflow-hidden shadow-elegant border border-gold/30 aspect-[3/4]">
+            <img
+              src={astrologerImg}
+              alt="Pradeep Malhotra Ji"
+              className="w-full h-full object-cover"
+              loading="lazy"
+              decoding="async"
+              width={600}
+              height={800}
+            />
             <div className="absolute inset-0 bg-gradient-to-t from-navy-deep/40 to-transparent" />
-          </div>
-          {/* Floating accent card */}
-          <div className="absolute -bottom-6 -right-4 lg:-right-10 bg-card rounded-2xl shadow-elegant border border-gold/30 px-6 py-5 flex items-center gap-4 max-w-[260px]">
-            <div className="w-12 h-12 rounded-full bg-gold-gradient flex items-center justify-center shadow-gold shrink-0">
-              <Sparkles className="w-6 h-6 text-navy-deep" />
-            </div>
-            <div>
-              <div className="font-serif text-xl text-navy">Certified Acharya</div>
-              <div className="text-xs text-muted-foreground">Vedic Astrology Council</div>
-            </div>
           </div>
         </div>
 
@@ -79,15 +77,26 @@ const About = () => {
           <div className="gold-divider my-7 w-24" />
 
           <p className="text-muted-foreground text-lg leading-relaxed">
-            With over two decades of profound study in Vedic Jyotish, Pandit Pradeep Ji blends
-            scriptural authenticity with deep intuitive insight. From birth chart analysis to remedies
-            rooted in tradition, every consultation is crafted to bring real change — not just answers.
+            With over a decade of dedicated practice in Vedic Jyotish, Pradeep Malhotra Ji combines
+            traditional astrological wisdom with practical, real-life guidance. From birth chart analysis
+            to personalized remedies, every consultation is focused on providing clarity, direction, and
+            meaningful solutions.
           </p>
           <p className="text-muted-foreground leading-relaxed mt-4">
-            Featured across national platforms and trusted by families, professionals, and entrepreneurs
-            across the globe, his guidance has helped thousands navigate love, career, marriage, and
-            spiritual growth with renewed confidence.
+            Trusted by individuals and families alike, his insights have helped many navigate important
+            life decisions related to career, relationships, and personal growth with confidence.
           </p>
+
+          <div className="mt-10 relative py-5 px-7 bg-gold/5 rounded-r-2xl border-l-4 border-gold group hover:bg-gold/10 transition-all duration-300">
+            <Quote className="absolute -top-3 -left-3 w-7 h-7 text-gold/30 rotate-180" />
+            <p className="text-navy font-serif italic font-semibold text-xl lg:text-2xl leading-[1.4] tracking-tight">
+              "If I can give you light, then I am an <span className="text-gradient-gold">Astrologer</span>"
+            </p>
+            <p className="mt-3 text-gold font-medium tracking-[0.1em] uppercase text-xs flex items-center gap-3">
+              <span className="w-8 h-px bg-gold/40" />
+              Pradeep Malhotra Ji
+            </p>
+          </div>
 
           <div className="about-stats mt-10 grid grid-cols-3 gap-4 sm:gap-6">
             {stats.map((s) => (

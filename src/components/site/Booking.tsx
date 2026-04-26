@@ -1,16 +1,17 @@
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { Sparkles, Phone, Mail, MapPin, Send } from "lucide-react";
+import { Sparkles, Phone, Mail, MapPin } from "lucide-react";
+import { WhatsAppIcon } from "../WhatsAppIcon";
 import { toast } from "sonner";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const WHATSAPP_NUMBER = "919999999999"; // replace with real number
+const WHATSAPP_NUMBER = "919717721217"; // replace with real number
 
 const Booking = () => {
   const ref = useRef<HTMLElement>(null);
-  const [form, setForm] = useState({ name: "", phone: "", email: "", message: "" });
+  const [form, setForm] = useState({ name: "", service: "Love and marriage harmony", message: "" });
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -31,12 +32,12 @@ const Booking = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!form.name || !form.phone) {
-      toast.error("Please share your name and phone number.");
+    if (!form.name || !form.message) {
+      toast.error("Please share your name and concern.");
       return;
     }
     const text = encodeURIComponent(
-      `Hello Pandit Ji, I would like to book a consultation.\n\nName: ${form.name}\nPhone: ${form.phone}\nEmail: ${form.email}\n\nMessage: ${form.message}`
+      `Hello Pradeep Ji, I would like to book a consultation.\n\nName: ${form.name}\nService: ${form.service}\n\nMessage: ${form.message}`
     );
     window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${text}`, "_blank");
     toast.success("Opening WhatsApp to confirm your consultation...");
@@ -51,7 +52,7 @@ const Booking = () => {
             <span className="text-xs tracking-[0.2em] uppercase text-navy/70 font-medium">Book Consultation</span>
           </div>
           <h2 className="mt-5 font-serif text-4xl sm:text-5xl lg:text-6xl text-navy leading-[1.1]">
-            Begin Your <span className="text-gradient-gold">Spiritual Journey</span>
+            Book Your <span className="text-gradient-gold">Consultation</span>
           </h2>
           <div className="gold-divider mx-auto my-7 w-24" />
           <p className="text-muted-foreground text-lg">
@@ -79,7 +80,7 @@ const Booking = () => {
                   </div>
                   <div>
                     <div className="text-xs uppercase tracking-widest text-gold-soft">Call</div>
-                    <a href="tel:+919999999999" className="text-ivory hover:text-gold transition">+91 99999 99999</a>
+                    <a href="tel:+919717721217" className="text-ivory hover:text-gold transition">+91 97177 21217</a>
                   </div>
                 </li>
                 <li className="flex items-start gap-4">
@@ -88,7 +89,7 @@ const Booking = () => {
                   </div>
                   <div>
                     <div className="text-xs uppercase tracking-widest text-gold-soft">Email</div>
-                    <a href="mailto:hello@divyajyotish.com" className="text-ivory hover:text-gold transition">hello@divyajyotish.com</a>
+                    <a href="mailto:sbv3113@gmail.com" className="text-ivory hover:text-gold transition">sbv3113@gmail.com</a>
                   </div>
                 </li>
                 <li className="flex items-start gap-4">
@@ -97,7 +98,7 @@ const Booking = () => {
                   </div>
                   <div>
                     <div className="text-xs uppercase tracking-widest text-gold-soft">Chamber</div>
-                    <div className="text-ivory">New Delhi, India</div>
+                    <div className="text-ivory">BA - 357/1, Block BA, Tagore Garden, Tagore Garden Extension, New Delhi, Delhi, 110027</div>
                   </div>
                 </li>
               </ul>
@@ -105,37 +106,35 @@ const Booking = () => {
           </div>
 
           {/* Form */}
-          <form onSubmit={handleSubmit} className="bk-form lg:col-span-3 bg-card border border-border rounded-3xl p-8 lg:p-10 shadow-card space-y-5">
-            <div className="grid sm:grid-cols-2 gap-5">
-              <Field label="Full Name" required>
+          <form onSubmit={handleSubmit} className="bk-form lg:col-span-3 bg-card border border-border rounded-3xl p-8 lg:p-10 shadow-card space-y-6">
+            <div className="grid sm:grid-cols-2 gap-6">
+              <Field label="Your Name" required>
                 <input
                   type="text"
                   value={form.name}
                   onChange={(e) => setForm({ ...form, name: e.target.value })}
-                  placeholder="Your name"
+                  placeholder="Enter your name"
                   className="form-input"
+                  required
                 />
               </Field>
-              <Field label="Phone" required>
-                <input
-                  type="tel"
-                  value={form.phone}
-                  onChange={(e) => setForm({ ...form, phone: e.target.value })}
-                  placeholder="+91 ..."
-                  className="form-input"
-                />
+              <Field label="Select Service" required>
+                <select
+                  value={form.service}
+                  onChange={(e) => setForm({ ...form, service: e.target.value })}
+                  className="form-input appearance-none cursor-pointer"
+                  style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23C5A059'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E")`, backgroundRepeat: 'no-repeat', backgroundPosition: 'right 1rem center', backgroundSize: '1.25rem' }}
+                >
+                  <option>Love and marriage harmony</option>
+                  <option>Career and Business Breakthrough</option>
+                  <option>Life prediction</option>
+                  <option>Legal guidance</option>
+                  <option>Numerology Consultation</option>
+                  <option>Vastu Consultation</option>
+                </select>
               </Field>
             </div>
-            <Field label="Email">
-              <input
-                type="email"
-                value={form.email}
-                onChange={(e) => setForm({ ...form, email: e.target.value })}
-                placeholder="you@email.com"
-                className="form-input"
-              />
-            </Field>
-            <Field label="Your Concern">
+            <Field label="Describe your concern or question...">
               <textarea
                 rows={5}
                 value={form.message}
@@ -146,10 +145,10 @@ const Booking = () => {
             </Field>
             <button
               type="submit"
-              className="group inline-flex w-full items-center justify-center gap-2 px-8 py-4 rounded-full bg-gold-gradient text-navy-deep font-semibold shadow-gold hover:shadow-gold-lg hover:-translate-y-0.5 transition-all"
+              className="group inline-flex w-full items-center justify-center gap-3 px-8 py-5 rounded-full bg-gold-gradient text-navy-deep font-bold text-lg shadow-gold hover:shadow-gold-lg hover:-translate-y-0.5 transition-all mt-4"
             >
-              Book Consultation
-              <Send className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              <WhatsAppIcon className="w-5 h-5" />
+              Book Now
             </button>
             <p className="text-xs text-center text-muted-foreground">
               By submitting, you'll be redirected to WhatsApp to confirm your booking.

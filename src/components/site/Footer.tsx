@@ -1,4 +1,4 @@
-import { Sparkles, Facebook, Instagram, Youtube, Twitter } from "lucide-react";
+import { Sparkles } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -14,7 +14,7 @@ const Footer = () => {
                 <Sparkles className="w-5 h-5 text-navy-deep" />
               </div>
               <div>
-                <div className="font-serif text-xl text-gradient-gold">Divya Jyotish</div>
+                <div className="font-serif text-xl text-gradient-gold">Pradeep Malhotra Ji</div>
                 <div className="text-[10px] tracking-[0.25em] text-gold-soft uppercase">Vedic Astrology</div>
               </div>
             </div>
@@ -48,27 +48,16 @@ const Footer = () => {
           <div>
             <h4 className="font-serif text-lg text-ivory mb-5">Get in Touch</h4>
             <ul className="space-y-3 text-sm text-ivory/70">
-              <li>+91 99999 99999</li>
-              <li>hello@divyajyotish.com</li>
-              <li>New Delhi, India</li>
+              <li>+91 97177 21217</li>
+              <li>sbv3113@gmail.com</li>
+              <li>BA - 357/1, Block BA, Tagore Garden, Tagore Garden Extension, New Delhi, Delhi, 110027</li>
             </ul>
-            <div className="flex gap-3 mt-5">
-              {[Facebook, Instagram, Youtube, Twitter].map((Icon, i) => (
-                <a
-                  key={i}
-                  href="#"
-                  className="w-10 h-10 rounded-full border border-gold/30 flex items-center justify-center text-gold hover:bg-gold hover:text-navy-deep transition-all"
-                >
-                  <Icon className="w-4 h-4" />
-                </a>
-              ))}
-            </div>
           </div>
         </div>
 
         <div className="gold-divider mt-14" />
         <div className="mt-6 flex flex-col sm:flex-row gap-3 justify-between items-center text-xs text-ivory/50">
-          <p>© {new Date().getFullYear()} Divya Jyotish. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Pradeep Malhotra Ji. All rights reserved.</p>
           <p>Crafted with sacred intention ✨</p>
         </div>
       </div>

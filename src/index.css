@@ -121,10 +121,6 @@
     -webkit-text-fill-color: transparent;
   }
 
-  .bg-hero-gradient {
-    background: var(--gradient-hero);
-  }
-
   .bg-gold-gradient {
     background: var(--gradient-gold);
   }
@@ -140,6 +136,14 @@
 
   .gold-border-glow {
     box-shadow: 0 0 0 1px hsl(var(--gold) / 0.3), var(--glow-gold);
+  }
+
+  .hero-particle {
+    will-change: transform, opacity;
+  }
+
+  .svc-card, .bk-info, .about-image {
+    contain: layout paint;
   }
 
   .star-bg {

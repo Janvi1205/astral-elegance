@@ -38,7 +38,7 @@ const Navbar = () => {
           </div>
           <div className="leading-tight">
             <div className="font-serif text-xl font-semibold text-gradient-gold">
-              Divya Jyotish
+              Pradeep Malhotra Ji
             </div>
             <div className="text-[10px] tracking-[0.25em] text-gold-soft uppercase">
               Vedic Astrology
