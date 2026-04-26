@@ -88,7 +88,7 @@ const Services = () => {
             What I Offer
           </span>
           <h2 className="mt-3 font-serif text-4xl sm:text-5xl lg:text-6xl text-navy leading-[1.1]">
-            My <span className="italic text-gradient-gold">Services</span>
+            My <span className="text-gradient-gold">Services</span>
           </h2>
         </div>
 

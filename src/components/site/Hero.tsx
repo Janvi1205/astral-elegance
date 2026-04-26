@@ -2,7 +2,7 @@ import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { Sparkles, MessageCircle, Star } from "lucide-react";
 import astrologerImg from "@/assets/astrologer-hero.jpg";
-import astrologerMobileImg from "@/assets/astrologer-hero-mobile.jpg";
+import astrologerCenteredImg from "@/assets/astrologer-hero-mobile.jpg";
 
 const WHATSAPP = "https://wa.me/919999999999?text=Hello%2C%20I%20would%20like%20to%20book%20a%20consultation.";
 
@@ -15,7 +15,6 @@ const Hero = () => {
       tl.from(".hero-badge", { y: 20, opacity: 0, duration: 0.7 })
         .from(".hero-title-line", { y: 50, opacity: 0, duration: 0.9, stagger: 0.15 }, "-=0.4")
         .from(".hero-sub", { y: 20, opacity: 0, duration: 0.7 }, "-=0.5")
-        .from(".hero-cta", { y: 20, opacity: 0, duration: 0.6, stagger: 0.12 }, "-=0.4")
         .from(".hero-trust", { y: 20, opacity: 0, duration: 0.6 }, "-=0.3")
         .from(".hero-image", { scale: 1.1, opacity: 0, duration: 1.4, ease: "power2.out" }, 0);
 
@@ -73,43 +72,46 @@ const Hero = () => {
 
       {/* ===== Mobile / tablet stacked layout (below lg) ===== */}
       <div className="lg:hidden relative z-10 pt-20 pb-10">
-        <div className="hero-image relative mx-auto w-full max-w-md aspect-[7/10]">
+        {/* Full-width image with blended edges */}
+        <div className="hero-image relative mx-auto w-full aspect-[4/5] overflow-hidden">
           <img
-            src={astrologerMobileImg}
+            src={astrologerCenteredImg}
             alt="Astrologer Pandit Pradeep Ji"
-            className="w-full h-full object-contain object-center"
+            className="w-full h-full object-cover object-[center_15%]"
             loading="eager"
           />
-          {/* Seamless blend into navy background */}
-          <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-navy-deep via-navy-deep/70 to-transparent pointer-events-none" />
-          <div className="absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r from-navy-deep/80 to-transparent pointer-events-none" />
-          <div className="absolute inset-y-0 right-0 w-1/4 bg-gradient-to-l from-navy-deep/80 to-transparent pointer-events-none" />
-        </div>
-
-        <div className="container mt-10 text-center">
-          <div className="hero-badge inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gold/15 border border-gold/40 backdrop-blur-md">
+          {/* Intense Edge Blending Gradients - All 4 sides */}
+          <div className="absolute inset-x-0 top-0 h-1/4 bg-gradient-to-b from-navy-deep via-navy-deep/60 to-transparent pointer-events-none" />
+          <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-navy-deep via-navy-deep/80 to-transparent pointer-events-none" />
+          <div className="absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r from-navy-deep to-transparent pointer-events-none" />
+          <div className="absolute inset-y-0 right-0 w-1/4 bg-gradient-to-l from-navy-deep to-transparent pointer-events-none" />
+          
+          {/* Badge (floating above the transition) */}
+          <div className="absolute bottom-6 left-1/2 -translate-x-1/2 hero-badge inline-flex items-center gap-2 px-4 py-2 rounded-full bg-navy-deep/40 border border-gold/30 backdrop-blur-md whitespace-nowrap z-20">
             <span className="w-1.5 h-1.5 rounded-full bg-gold animate-pulse" />
             <span className="text-[10px] tracking-[0.25em] uppercase text-gold font-semibold">
               Trusted Vedic Astrologer
             </span>
           </div>
+        </div>
+
+        <div className="container mt-4 text-center">
 
           <h1 className="mt-6 font-serif leading-[1.05] text-ivory">
-            <span className="hero-title-line block text-4xl sm:text-5xl font-medium">Discover Your</span>
-            <span className="hero-title-line block text-5xl sm:text-6xl italic text-gradient-gold mt-2 font-medium">
-              Cosmic Path
+            <span className="hero-title-line block text-4xl sm:text-5xl font-medium">Align Your Life</span>
+            <span className="hero-title-line block text-4xl sm:text-5xl text-gradient-gold mt-2 font-medium">
+              With Cosmic Forces
             </span>
           </h1>
 
           <p className="hero-sub mt-5 text-base text-ivory/75 max-w-md mx-auto leading-relaxed">
-            Unlock the secrets of your birth chart with personalized Vedic astrology
-            consultations. Guidance for love, career, health & spiritual growth.
+            Personalized astrology consultations by Pradeep Malhotra Ji, crafted to reveal your true path and unlock powerful opportunities in your life.
           </p>
 
           <div className="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
             <a
               href="#contact"
-              className="hero-cta inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-gold-gradient text-navy-deep font-semibold shadow-gold hover:shadow-gold-lg transition-all"
+              className="hero-cta hero-cta-mobile inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-gold-gradient text-navy-deep font-semibold shadow-gold hover:shadow-gold-lg transition-all"
             >
               <Sparkles className="w-4 h-4" />
               Book Now
@@ -118,7 +120,7 @@ const Hero = () => {
               href={WHATSAPP}
               target="_blank"
               rel="noreferrer"
-              className="hero-cta inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full border border-gold/40 text-ivory hover:bg-gold/10 hover:border-gold transition-all backdrop-blur-md bg-navy-deep/30"
+              className="hero-cta hero-cta-mobile inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full border border-gold/40 text-ivory hover:bg-gold/10 hover:border-gold transition-all backdrop-blur-md bg-navy-deep/30"
             >
               <MessageCircle className="w-5 h-5 text-gold" />
               WhatsApp
@@ -143,8 +145,8 @@ const Hero = () => {
       </div>
 
       {/* ===== Desktop content (lg+ only) ===== */}
-      <div className="hidden lg:flex container relative z-10 pt-44 pb-32 min-h-screen items-center">
-        <div className="max-w-2xl">
+      <div className="hidden lg:flex container relative z-20 pt-32 pb-20 min-h-screen items-center">
+        <div className="max-w-2xl relative z-30">
           <div className="hero-badge inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gold/15 border border-gold/40 backdrop-blur-md">
             <span className="w-1.5 h-1.5 rounded-full bg-gold animate-pulse" />
             <span className="text-xs tracking-[0.25em] uppercase text-gold font-semibold">
@@ -153,21 +155,20 @@ const Hero = () => {
           </div>
 
           <h1 className="mt-7 font-serif leading-[1.05] text-ivory">
-            <span className="hero-title-line block text-6xl lg:text-7xl font-medium">Discover Your</span>
-            <span className="hero-title-line block text-7xl lg:text-8xl italic text-gradient-gold mt-2 font-medium">
-              Cosmic Path
+            <span className="hero-title-line block text-6xl lg:text-7xl font-medium">Align Your Life</span>
+            <span className="hero-title-line block text-6xl lg:text-7xl text-gradient-gold mt-2 font-medium">
+              With Cosmic Forces
             </span>
           </h1>
 
           <p className="hero-sub mt-7 text-lg text-ivory/75 max-w-xl leading-relaxed">
-            Unlock the secrets of your birth chart with personalized Vedic astrology
-            consultations. Guidance for love, career, health & spiritual growth.
+            Personalized astrology consultations by Pradeep Malhotra Ji, crafted to reveal your true path and unlock powerful opportunities in your life.
           </p>
 
-          <div className="mt-10 flex flex-col sm:flex-row gap-4">
+          <div className="hero-cta-container mt-10 flex flex-col sm:flex-row gap-4 relative z-50">
             <a
               href="#contact"
-              className="hero-cta group inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-gold-gradient text-navy-deep font-semibold shadow-gold hover:shadow-gold-lg hover:-translate-y-0.5 transition-all"
+              className="hero-cta hero-cta-desktop group inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-gold-gradient text-navy-deep font-semibold shadow-gold hover:shadow-gold-lg hover:-translate-y-0.5 transition-all relative z-50 opacity-100"
             >
               <Sparkles className="w-4 h-4" />
               Book My Consultation
@@ -176,7 +177,7 @@ const Hero = () => {
               href={WHATSAPP}
               target="_blank"
               rel="noreferrer"
-              className="hero-cta inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full border border-gold/40 text-ivory hover:bg-gold/10 hover:border-gold transition-all backdrop-blur-md bg-navy-deep/30"
+              className="hero-cta hero-cta-desktop inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full border border-gold/40 text-ivory hover:bg-gold/10 hover:border-gold transition-all backdrop-blur-md bg-navy-deep/30 relative z-50 opacity-100"
             >
               <MessageCircle className="w-5 h-5 text-gold" />
               Chat on WhatsApp

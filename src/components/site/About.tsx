@@ -19,18 +19,24 @@ const About = () => {
     const ctx = gsap.context(() => {
       gsap.fromTo(".about-image",
         { x: -60, opacity: 0 },
-        { x: 0, opacity: 1, duration: 1, ease: "power3.out",
-          scrollTrigger: { trigger: ref.current, start: "top 80%", toggleActions: "play none none none" } }
+        {
+          x: 0, opacity: 1, duration: 1, ease: "power3.out",
+          scrollTrigger: { trigger: ref.current, start: "top 80%", toggleActions: "play none none none" }
+        }
       );
       gsap.fromTo(".about-text > *",
         { y: 30, opacity: 0 },
-        { y: 0, opacity: 1, duration: 0.8, stagger: 0.12, ease: "power3.out",
-          scrollTrigger: { trigger: ref.current, start: "top 80%", toggleActions: "play none none none" } }
+        {
+          y: 0, opacity: 1, duration: 0.8, stagger: 0.12, ease: "power3.out",
+          scrollTrigger: { trigger: ref.current, start: "top 80%", toggleActions: "play none none none" }
+        }
       );
       gsap.fromTo(".about-stat",
         { y: 40, opacity: 0 },
-        { y: 0, opacity: 1, duration: 0.7, stagger: 0.15, ease: "back.out(1.4)",
-          scrollTrigger: { trigger: ".about-stats", start: "top 90%", toggleActions: "play none none none" } }
+        {
+          y: 0, opacity: 1, duration: 0.7, stagger: 0.15, ease: "back.out(1.4)",
+          scrollTrigger: { trigger: ".about-stats", start: "top 90%", toggleActions: "play none none none" }
+        }
       );
       ScrollTrigger.refresh();
     }, ref);
@@ -59,7 +65,7 @@ const About = () => {
           </div>
         </div>
 
-        {/* Text */}
+
         <div className="about-text">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gold/10 border border-gold/30">
             <div className="w-1.5 h-1.5 rounded-full bg-gold" />

@@ -84,7 +84,7 @@ const WhyUs = () => {
             Why Choose Us
           </span>
           <h2 className="mt-3 font-serif text-4xl sm:text-5xl lg:text-6xl text-navy leading-[1.1]">
-            Trusted by <span className="italic text-gradient-gold">Thousands</span>
+            Trusted by <span className="text-gradient-gold">Thousands</span>
           </h2>
         </div>
 

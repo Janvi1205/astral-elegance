@@ -76,7 +76,7 @@ const Testimonials = () => {
             <span className="text-xs tracking-[0.2em] uppercase text-gold-soft font-medium">Testimonials</span>
           </div>
           <h2 className="mt-5 font-serif text-4xl sm:text-5xl lg:text-6xl text-ivory leading-[1.1]">
-            Voices of <span className="italic text-gradient-gold">Transformation</span>
+            Voices of <span className="text-gradient-gold">Transformation</span>
           </h2>
           <div className="gold-divider mx-auto my-7 w-24" />
         </div>

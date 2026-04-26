@@ -51,7 +51,7 @@ const Booking = () => {
             <span className="text-xs tracking-[0.2em] uppercase text-navy/70 font-medium">Book Consultation</span>
           </div>
           <h2 className="mt-5 font-serif text-4xl sm:text-5xl lg:text-6xl text-navy leading-[1.1]">
-            Begin Your <span className="italic text-gradient-gold">Spiritual Journey</span>
+            Begin Your <span className="text-gradient-gold">Spiritual Journey</span>
           </h2>
           <div className="gold-divider mx-auto my-7 w-24" />
           <p className="text-muted-foreground text-lg">
