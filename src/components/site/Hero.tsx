@@ -72,14 +72,14 @@ const Hero = () => {
 
       {/* ===== Mobile / tablet stacked layout (below lg) ===== */}
       <div className="lg:hidden relative z-10 pt-24 pb-14">
-        <div className="hero-image relative mx-auto w-[88%] max-w-sm aspect-[4/5] rounded-3xl overflow-hidden border border-gold/30 shadow-gold-lg">
+        <div className="hero-image relative w-full aspect-[4/5] max-h-[70vh] overflow-hidden">
           <img
             src={astrologerImg}
             alt="Astrologer Pandit Pradeep Ji"
-            className="w-full h-full object-cover object-[70%_center]"
+            className="w-full h-full object-contain object-center"
             loading="eager"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-navy-deep/60 via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-navy-deep/60 via-transparent to-transparent pointer-events-none" />
         </div>
 
         <div className="container mt-10 text-center">
