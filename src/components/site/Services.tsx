@@ -3,12 +3,12 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { WhatsAppIcon } from "../WhatsAppIcon";
 
-import svcLove from "@/assets/svc-love-harmony.png";
-import svcCareer from "@/assets/svc-career-breakthrough.png";
-import svcLife from "@/assets/svc-life-prediction.png";
-import svcLegal from "@/assets/svc-legal-guidance.png";
-import svcNumerology from "@/assets/svc-numerology.png";
-import svcVastu from "@/assets/svc-vastu.png";
+import svcLove from "@/assets/svc-love-harmony.webp";
+import svcCareer from "@/assets/svc-career-breakthrough.webp";
+import svcLife from "@/assets/svc-life-prediction.webp";
+import svcLegal from "@/assets/svc-legal-guidance.webp";
+import svcNumerology from "@/assets/svc-numerology.webp";
+import svcVastu from "@/assets/svc-vastu.webp";
 
 gsap.registerPlugin(ScrollTrigger);
 

@@ -2,7 +2,7 @@ import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Quote, Sparkles } from "lucide-react";
-import astrologerImg from "@/assets/astrologer-stage.jpg";
+import astrologerImg from "@/assets/astrologer-stage.webp";
 
 gsap.registerPlugin(ScrollTrigger);
 
