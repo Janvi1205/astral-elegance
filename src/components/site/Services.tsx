@@ -2,6 +2,13 @@ import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
+import svcLove from "@/assets/svc-love.jpg";
+import svcMarriage from "@/assets/svc-marriage.jpg";
+import svcFamily from "@/assets/svc-family.jpg";
+import svcCouple from "@/assets/svc-couple.jpg";
+import svcCareer from "@/assets/svc-career.jpg";
+import svcVashikaran from "@/assets/svc-vashikaran.jpg";
+
 gsap.registerPlugin(ScrollTrigger);
 
 const WHATSAPP = "https://wa.me/919999999999?text=Hello%2C%20I%20would%20like%20to%20book%20a%20consultation.";
@@ -10,32 +17,32 @@ const services = [
   {
     title: "Love Problem Solution",
     desc: "Overcome heartbreak, misunderstandings, and relationship obstacles with powerful remedies.",
-    img: "https://images.unsplash.com/photo-1518621736915-f3b1c41bfd00?auto=format&fit=crop&w=800&q=70",
+    img: svcLove,
   },
   {
     title: "Love Marriage Specialist",
     desc: "Get expert guidance and astrological support for inter-caste and love marriages.",
-    img: "https://images.unsplash.com/photo-1604017011826-d3b4c23f8914?auto=format&fit=crop&w=800&q=70",
+    img: svcMarriage,
   },
   {
     title: "Family Problem Solution",
     desc: "Resolve family disputes, bring peace, and restore harmony in your household.",
-    img: "https://images.unsplash.com/photo-1609220136736-443140cffec6?auto=format&fit=crop&w=800&q=70",
+    img: svcFamily,
   },
   {
     title: "Husband Wife Problem",
     desc: "Resolve disputes, rebuild trust, and bring harmony back to your marriage.",
-    img: "https://images.unsplash.com/photo-1529634806980-85c3dd6d34ac?auto=format&fit=crop&w=800&q=70",
+    img: svcCouple,
   },
   {
     title: "Career & Business",
     desc: "Unlock professional growth, financial stability, and success aligned with your stars.",
-    img: "https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=800&q=70",
+    img: svcCareer,
   },
   {
     title: "Vashikaran Specialist",
     desc: "Ancient Vedic vashikaran solutions for love, attraction, and relationship challenges.",
-    img: "https://images.unsplash.com/photo-1602080858428-57174f9431cf?auto=format&fit=crop&w=800&q=70",
+    img: svcVashikaran,
   },
 ];
 
@@ -89,28 +96,32 @@ const Services = () => {
           {services.map((s) => (
             <article
               key={s.title}
-              className="svc-card group rounded-2xl bg-card border border-border overflow-hidden shadow-card hover:shadow-gold-lg hover:-translate-y-1.5 transition-all duration-500"
+              className="svc-card group flex flex-col rounded-2xl bg-card border border-border overflow-hidden shadow-card hover:shadow-gold-lg hover:-translate-y-1.5 transition-all duration-500"
             >
               <div className="relative h-52 overflow-hidden">
                 <img
                   src={s.img}
                   alt={s.title}
                   loading="lazy"
+                  width={1024}
+                  height={768}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-navy/30 via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-navy/40 via-transparent to-transparent" />
               </div>
-              <div className="p-6">
+              <div className="flex flex-col flex-1 p-6">
                 <h3 className="font-serif text-2xl text-navy">{s.title}</h3>
                 <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{s.desc}</p>
-                <a
-                  href={WHATSAPP}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="mt-5 inline-flex items-center justify-center px-6 py-2.5 rounded-full bg-gold-gradient text-navy-deep text-sm font-semibold shadow-gold hover:shadow-gold-lg hover:-translate-y-0.5 transition-all"
-                >
-                  Book Now
-                </a>
+                <div className="mt-auto pt-6">
+                  <a
+                    href={WHATSAPP}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center justify-center px-6 py-2.5 rounded-full bg-gold-gradient text-navy-deep text-sm font-semibold shadow-gold hover:shadow-gold-lg hover:-translate-y-0.5 transition-all"
+                  >
+                    Book Now
+                  </a>
+                </div>
               </div>
             </article>
           ))}
