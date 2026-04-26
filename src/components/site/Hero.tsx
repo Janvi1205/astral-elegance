@@ -2,6 +2,7 @@ import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { Sparkles, MessageCircle, Star } from "lucide-react";
 import astrologerImg from "@/assets/astrologer-hero.jpg";
+import astrologerMobileImg from "@/assets/astrologer-hero-mobile.jpg";
 
 const WHATSAPP = "https://wa.me/919999999999?text=Hello%2C%20I%20would%20like%20to%20book%20a%20consultation.";
 
