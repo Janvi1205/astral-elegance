@@ -46,7 +46,7 @@ const Hero = () => {
             className="w-full h-full object-cover object-right"
             loading="eager"
             decoding="async"
-            fetchpriority="high"
+            fetchPriority="high"
             width={1920}
             height={1080}
           />
@@ -85,7 +85,7 @@ const Hero = () => {
             className="w-full h-full object-cover object-[center_15%]"
             loading="eager"
             decoding="async"
-            fetchpriority="high"
+            fetchPriority="high"
             width={800}
             height={1000}
           />
