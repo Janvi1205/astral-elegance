@@ -52,7 +52,7 @@ const About = () => {
           <div className="relative rounded-3xl overflow-hidden shadow-elegant border border-gold/30 aspect-[3/4]">
             <img
               src={astrologerImg}
-              alt="Pradeep Malhotra Ji"
+              alt="Pradeep Malhotra"
               className="w-full h-full object-cover"
               loading="lazy"
               decoding="async"
@@ -77,7 +77,7 @@ const About = () => {
           <div className="gold-divider my-7 w-24" />
 
           <p className="text-muted-foreground text-lg leading-relaxed">
-            With over a decade of dedicated practice in Vedic Jyotish, Pradeep Malhotra Ji combines
+            With over a decade of dedicated practice in Vedic Jyotish, Pradeep Malhotra combines
             traditional astrological wisdom with practical, real-life guidance. From birth chart analysis
             to personalized remedies, every consultation is focused on providing clarity, direction, and
             meaningful solutions.
@@ -94,7 +94,7 @@ const About = () => {
             </p>
             <p className="mt-3 text-gold font-medium tracking-[0.1em] uppercase text-xs flex items-center gap-3">
               <span className="w-8 h-px bg-gold/40" />
-              Pradeep Malhotra Ji
+              Pradeep Malhotra
             </p>
           </div>
 

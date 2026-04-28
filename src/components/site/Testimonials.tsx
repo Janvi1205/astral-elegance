@@ -60,6 +60,18 @@ const reviews = [
     text: "Very authentic and genuine reading is provided,with personal touch,which is rare nowadays. Big names doesn't matter, authenticity matters",
     rating: 5,
   },
+  {
+    name: "Mohit Arora",
+    role: "Genuine Reading",
+    text: "Very genuine astrologer. Everything he said was very accurate, based on what I have observed about myself. He is soft-spoken and has impressive knowledge. I have clarity about everything in my mind now.",
+    rating: 5,
+  },
+  {
+    name: "Harneet Kaur",
+    role: "Humble & Supportive",
+    text: "This man will stand by you in your tough times. He is not just an astrologer but also a very humble person. Thanks for always being available!",
+    rating: 5,
+  },
 ];
 
 const Testimonials = () => {

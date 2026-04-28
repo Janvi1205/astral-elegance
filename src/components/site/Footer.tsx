@@ -14,8 +14,8 @@ const Footer = () => {
                 <Sparkles className="w-5 h-5 text-navy-deep" />
               </div>
               <div>
-                <div className="font-serif text-xl text-gradient-gold">Pradeep Malhotra Ji</div>
-                <div className="text-[10px] tracking-[0.25em] text-gold-soft uppercase">Vedic Astrology</div>
+                <div className="font-serif text-xl text-gradient-gold">Pradeep Malhotra</div>
+                <div className="text-[10px] tracking-[0.25em] text-gold-soft uppercase">Vedic Astrologer</div>
               </div>
             </div>
             <p className="mt-5 text-ivory/70 text-sm leading-relaxed">
@@ -39,7 +39,7 @@ const Footer = () => {
           <div>
             <h4 className="font-serif text-lg text-ivory mb-5">Services</h4>
             <ul className="space-y-3 text-sm text-ivory/70">
-              {["Love Solutions", "Marriage Astrology", "Career Guidance", "Kundli Reading", "Vastu", "Gemstone Advice"].map((s) => (
+              {["Love Solutions", "Marriage Astrology", "Career Guidance", "Kundli Reading", "Vaastu", "Gemstone Advice"].map((s) => (
                 <li key={s}><a href="#services" className="hover:text-gold transition-colors">{s}</a></li>
               ))}
             </ul>
@@ -57,7 +57,7 @@ const Footer = () => {
 
         <div className="gold-divider mt-14" />
         <div className="mt-6 flex flex-col sm:flex-row gap-3 justify-between items-center text-xs text-ivory/50">
-          <p>© {new Date().getFullYear()} Pradeep Malhotra Ji. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Pradeep Malhotra. All rights reserved.</p>
           <p>Crafted with sacred intention ✨</p>
         </div>
       </div>

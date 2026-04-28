@@ -42,7 +42,7 @@ const Hero = () => {
         <div className="hero-image absolute inset-0">
           <img
             src={astrologerImg}
-            alt="Astrologer Pradeep Malhotra Ji"
+            alt="Astrologer Pradeep Malhotra"
             className="w-full h-full object-cover object-right"
             loading="eager"
             decoding="async"
@@ -81,7 +81,7 @@ const Hero = () => {
         <div className="hero-image relative mx-auto w-full aspect-[4/5] overflow-hidden">
           <img
             src={astrologerCenteredImg}
-            alt="Astrologer Pradeep Malhotra Ji"
+            alt="Astrologer Pradeep Malhotra"
             className="w-full h-full object-cover object-[center_15%]"
             loading="eager"
             decoding="async"
@@ -114,7 +114,7 @@ const Hero = () => {
           </h1>
 
           <p className="hero-sub mt-5 text-base text-ivory/75 max-w-md mx-auto leading-relaxed">
-            Personalized astrology consultations by Pradeep Malhotra Ji, crafted to reveal your true path and unlock powerful opportunities in your life.
+            Personalized astrology consultations by Pradeep Malhotra, crafted to reveal your true path and unlock powerful opportunities in your life.
           </p>
 
           <div className="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
@@ -171,7 +171,7 @@ const Hero = () => {
           </h1>
 
           <p className="hero-sub mt-7 text-lg text-ivory/75 max-w-xl leading-relaxed">
-            Personalized astrology consultations by Pradeep Malhotra Ji, crafted to reveal your true path and unlock powerful opportunities in your life.
+            Personalized astrology consultations by Pradeep Malhotra, crafted to reveal your true path and unlock powerful opportunities in your life.
           </p>
 
           <div className="hero-cta-container mt-10 flex flex-col sm:flex-row gap-4 relative z-50">

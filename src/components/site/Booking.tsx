@@ -130,7 +130,7 @@ const Booking = () => {
                   <option>Life prediction</option>
                   <option>Legal guidance</option>
                   <option>Numerology Consultation</option>
-                  <option>Vastu Consultation</option>
+                  <option>Vaastu Consultation</option>
                 </select>
               </Field>
             </div>

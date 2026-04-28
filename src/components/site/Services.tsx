@@ -41,7 +41,7 @@ const services = [
     img: svcNumerology,
   },
   {
-    title: "Vastu Consultation",
+    title: "Vaastu Consultation",
     desc: "Harmonize your living and working spaces to attract positive energy, abundance, and peace of mind.",
     img: svcVastu,
   },
