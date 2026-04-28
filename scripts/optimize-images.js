@@ -19,7 +19,6 @@ async function optimizeImages() {
 
     try {
       const inputStat = await stat(inputPath);
-
       await sharp(inputPath)
         .webp({ quality: 80, effort: 6 })
         .toFile(outputPath);
@@ -34,9 +33,8 @@ async function optimizeImages() {
     } catch (err) {
       console.error(`  ❌ Failed: ${file} — ${err.message}`);
     }
-  }
 
-  console.log("\n✨ All done! Imports will be updated next.\n");
+  }
 }
 
 optimizeImages();
