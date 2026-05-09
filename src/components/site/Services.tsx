@@ -51,13 +51,6 @@ const consultationTiers = [
 
 const counsellingTiers = [
   {
-    title: "Match Making & Compatibility",
-    price: "₹51,000 or 1% of marriage spend",
-    details: "Detailed compatibility analysis based on Guna Milan and planetary alignment. Fees: ₹51,000 or 1% of marriage spend (whichever is higher).",
-    icon: <Info className="w-5 h-5 text-gold" />,
-    duration: "Per Match",
-  },
-  {
     title: "Marriage Counselling Package",
     price: "₹1,00,000",
     details: "In-depth support to resolve marital issues and strengthen your bond. Includes 5 personal or Zoom meetings.",
@@ -113,7 +106,7 @@ const services = [
   },
   {
     title: "Marriage Counselling",
-    desc: "Comprehensive support for marital harmony, compatibility analysis, and resolving deep-rooted relationship conflicts.",
+    desc: "Comprehensive support for marital harmony and resolving deep-rooted relationship conflicts.",
     img: svcLove,
     hasDetails: true,
     tiers: counsellingTiers,
