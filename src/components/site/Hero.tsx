@@ -96,15 +96,17 @@ const Hero = () => {
           <div className="absolute inset-y-0 right-0 w-1/4 bg-gradient-to-l from-navy-deep to-transparent pointer-events-none" />
           
           {/* Badge (floating above the transition) */}
-          <div className="absolute bottom-6 left-1/2 -translate-x-1/2 hero-badge inline-flex items-center gap-2 px-4 py-2 rounded-full bg-navy-deep/40 border border-gold/30 backdrop-blur-md whitespace-nowrap z-20">
-            <span className="w-1.5 h-1.5 rounded-full bg-gold animate-pulse" />
-            <span className="text-[10px] tracking-[0.25em] uppercase text-gold font-semibold">
-              Trusted Vedic Astrologer
+          <a
+            href="#seminar"
+            className="absolute bottom-6 left-1/2 -translate-x-1/2 hero-badge inline-flex items-center gap-2 px-4 py-2 rounded-full bg-red-600/20 border border-red-500/40 backdrop-blur-md whitespace-nowrap z-20 animate-pulse hover:bg-red-600/30 transition-colors"
+          >
+            <span className="text-[10px] tracking-[0.15em] font-semibold text-red-300">
+              🔥 LIVE SEMINAR • ONLY 15 SEATS AVAILABLE
             </span>
-          </div>
+          </a>
         </div>
 
-        <div className="container mt-4 text-center">
+        <div className="container mt-4 text-center flex flex-col items-center">
 
           <h1 className="mt-6 font-serif leading-[1.05] text-ivory">
             <span className="hero-title-line block text-4xl sm:text-5xl font-medium">Align Your Life</span>
@@ -124,6 +126,12 @@ const Hero = () => {
             >
               <Sparkles className="w-4 h-4" />
               Book Now
+            </a>
+            <a
+              href="#seminar"
+              className="hero-cta hero-cta-mobile inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full border border-gold/60 text-gold hover:bg-gold hover:text-navy-deep transition-all font-semibold"
+            >
+              <span>🔥 Join Seminar</span>
             </a>
             <a
               href={WHATSAPP}
@@ -156,11 +164,15 @@ const Hero = () => {
       {/* ===== Desktop content (lg+ only) ===== */}
       <div className="hidden lg:flex container relative z-20 pt-32 pb-20 min-h-screen items-center">
         <div className="max-w-2xl relative z-30">
-          <div className="hero-badge inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gold/15 border border-gold/40 backdrop-blur-md">
-            <span className="w-1.5 h-1.5 rounded-full bg-gold animate-pulse" />
-            <span className="text-xs tracking-[0.25em] uppercase text-gold font-semibold">
-              Trusted Vedic Astrologer
-            </span>
+          <div className="flex flex-wrap gap-3 items-center">
+            <a
+              href="#seminar"
+              className="hero-badge inline-flex items-center gap-2 px-4 py-2 rounded-full bg-red-600/20 border border-red-500/40 backdrop-blur-md hover:bg-red-600/30 transition-all animate-pulse"
+            >
+              <span className="text-xs tracking-[0.15em] font-semibold text-red-300">
+                🔥 LIVE SEMINAR • ONLY 15 SEATS AVAILABLE
+              </span>
+            </a>
           </div>
 
           <h1 className="mt-7 font-serif leading-[1.05] text-ivory">
@@ -174,13 +186,19 @@ const Hero = () => {
             Personalized astrology consultations by Pradeep Malhotra, crafted to reveal your true path and unlock powerful opportunities in your life.
           </p>
 
-          <div className="hero-cta-container mt-10 flex flex-col sm:flex-row gap-4 relative z-50">
+          <div className="hero-cta-container mt-10 flex flex-wrap gap-4 relative z-50">
             <a
               href="#contact"
               className="hero-cta hero-cta-desktop group inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-gold-gradient text-navy-deep font-semibold shadow-gold hover:shadow-gold-lg hover:-translate-y-0.5 transition-all relative z-50 opacity-100"
             >
               <Sparkles className="w-4 h-4" />
               Book My Consultation
+            </a>
+            <a
+              href="#seminar"
+              className="hero-cta hero-cta-desktop group inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full border border-gold/60 text-gold hover:bg-gold hover:text-navy-deep transition-all relative z-50 opacity-100 font-semibold"
+            >
+              <span>🔥 Join Seminar</span>
             </a>
             <a
               href={WHATSAPP}
