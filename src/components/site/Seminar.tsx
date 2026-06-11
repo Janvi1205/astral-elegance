@@ -67,7 +67,7 @@ export const Seminar = () => {
     return () => ctx.revert();
   }, []);
 
-  const whatsappLink = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
+  const whatsappLink = `https://api.whatsapp.com/send?phone=${WHATSAPP_NUMBER}&text=${encodeURIComponent(
     'Hello Pradeep Ji, I would like to book an Early Bird Seat (Rs 5100) for the Yeh Din Anjaan Nahi Seminar on 20th June 2026. Please share the booking details.'
   )}`;
 
@@ -154,7 +154,7 @@ export const Seminar = () => {
               <div className="flex items-center gap-2.5 bg-red-600/10 border border-red-500/30 rounded-2xl px-4 py-3 text-red-200">
                 <Flame className="w-5 h-5 text-red-400 shrink-0 animate-pulse" />
                 <span className="text-xs sm:text-sm font-semibold tracking-wide uppercase">
-                  ONLY 15 SEATS AVAILABLE IN TOTAL
+                  ONLY 10 SEATS AVAILABLE IN TOTAL
                 </span>
               </div>
 
@@ -172,7 +172,7 @@ export const Seminar = () => {
                 </div>
                 
                 <p className="text-xs text-ivory/70 leading-tight">
-                  <span className="text-gold font-semibold">First 15 Seats Only.</span> Normal seat pricing of ₹11,000 applies once early slots are filled.
+                  <span className="text-gold font-semibold">First 10 Seats Only.</span> Normal seat pricing of ₹11,000 applies once early slots are filled.
                 </p>
               </div>
 
