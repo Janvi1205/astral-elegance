@@ -1,36 +1,19 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { Calendar, MapPin, Coffee, Utensils, Sparkles, Flame, Star, Percent } from "lucide-react";
-import { WhatsAppIcon } from "../WhatsAppIcon";
+import { Flame } from "lucide-react";
+import pradeepImage from "../../assets/pradeep-astrologer.png";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const WHATSAPP_NUMBER = "919717721217";
 
-const agendaPoints = [
-  {
-    title: "Why some days feel effortless",
-    description: "Discover why certain days flow beautifully while others fight you at every step."
-  },
-  {
-    title: "Why certain people drain you",
-    description: "Understand the subtle cosmic exchanges that make some people draining and others supportive."
-  },
-  {
-    title: "Why timing is everything",
-    description: "Learn how the alignment of planets controls your timing and how to finally get yours right."
-  },
-  {
-    title: "Why your body follows a pattern",
-    description: "Explore the internal biological rhythms and patterns that connect directly to astrometeorology."
-  }
-];
-
-const inclusions = [
-  { icon: Utensils, text: "5-Star Buffet Lunch" },
-  { icon: Coffee, text: "2 Rounds of Coffee & Tea" },
-  { icon: Star, text: "Premium 5-Star Venue Experience" }
+const highlights = [
+  "How to Study & Interpret a Birth Chart",
+  "Does Shani Sade Sati Really Work?",
+  "The Truth About Manglik, Pitra & Kaal Sarp Dosh",
+  "How to Assess Wealth Potential Through Astrology",
+  "Exclusive 2-Hour Live Q&A Session"
 ];
 
 export const Seminar = () => {
@@ -40,26 +23,26 @@ export const Seminar = () => {
     const ctx = gsap.context(() => {
       gsap.fromTo(
         ".sem-head > *",
-        { y: 30, opacity: 0 },
+        { y: 40, opacity: 0 },
         {
           y: 0,
           opacity: 1,
-          duration: 0.7,
-          stagger: 0.1,
+          duration: 1,
+          stagger: 0.15,
           ease: "power3.out",
-          scrollTrigger: { trigger: ref.current, start: "top 85%", toggleActions: "play none none none" }
+          scrollTrigger: { trigger: ref.current, start: "top 80%", toggleActions: "play none none none" }
         }
       );
       gsap.fromTo(
-        ".sem-card",
-        { y: 50, opacity: 0 },
+        ".sem-item",
+        { y: 60, opacity: 0 },
         {
           y: 0,
           opacity: 1,
-          duration: 0.8,
-          stagger: 0.15,
+          duration: 1.2,
+          stagger: 0.2,
           ease: "power3.out",
-          scrollTrigger: { trigger: ".sem-grid", start: "top 90%", toggleActions: "play none none none" }
+          scrollTrigger: { trigger: ".sem-grid", start: "top 85%", toggleActions: "play none none none" }
         }
       );
       ScrollTrigger.refresh();
@@ -68,166 +51,133 @@ export const Seminar = () => {
   }, []);
 
   const whatsappLink = `https://api.whatsapp.com/send?phone=${WHATSAPP_NUMBER}&text=${encodeURIComponent(
-    'Hello Pradeep Ji, I would like to book an Early Bird Seat (Rs 5100) for the Yeh Din Anjaan Nahi Seminar on 20th June 2026. Please share the booking details.'
+    'Hello Pradeep Ji, I would like to register for the Astrology Seminar on 20th June 2026. Please share the booking details.'
   )}`;
 
   return (
     <section
       ref={ref}
       id="seminar"
-      className="relative py-24 lg:py-32 bg-navy-deep overflow-hidden text-ivory"
+      className="relative py-20 lg:py-28 bg-[#070B14] overflow-hidden text-[#EAE6D7]"
     >
-      {/* Decorative stars and glows */}
-      <div className="absolute inset-0 star-bg opacity-30 pointer-events-none" />
-      <div className="absolute top-1/4 left-1/10 w-[500px] h-[500px] bg-gold/5 rounded-full blur-[140px] pointer-events-none" />
-      <div className="absolute bottom-1/4 right-1/10 w-[500px] h-[500px] bg-gold/5 rounded-full blur-[140px] pointer-events-none" />
+      {/* Subtle Background Effects */}
+      <div className="absolute inset-0 star-bg opacity-20 pointer-events-none mix-blend-screen" />
+      <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-gradient-radial from-[#D4AF37]/10 to-transparent blur-[150px] pointer-events-none translate-x-1/3 -translate-y-1/3" />
+      <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-gradient-radial from-[#111F3A]/50 to-transparent blur-[120px] pointer-events-none -translate-x-1/4 translate-y-1/4" />
       
-      <div className="container relative px-4 sm:px-6 z-10">
+      <div className="container relative px-6 z-10 max-w-7xl mx-auto">
         
         {/* Section Header */}
-        <div className="sem-head text-center max-w-3xl mx-auto">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gold/10 border border-gold/30 backdrop-blur-md">
-            <Sparkles className="w-4 h-4 text-gold animate-pulse" />
-            <span className="text-xs tracking-[0.25em] uppercase text-gold font-semibold">
-              An Exclusive Live Seminar
+        <div className="sem-head text-center max-w-5xl mx-auto mb-16 relative z-10">
+          <div className="inline-flex items-center justify-center gap-4 mb-8">
+            <div className="h-px w-12 bg-gradient-to-r from-transparent to-[#D4AF37]/50"></div>
+            <span className="text-[10px] sm:text-xs tracking-[0.4em] uppercase text-[#D4AF37] font-light">
+              Astrology Masterclass 2026
             </span>
+            <div className="h-px w-12 bg-gradient-to-l from-transparent to-[#D4AF37]/50"></div>
           </div>
           
-          <p className="mt-4 text-xs sm:text-sm tracking-[0.3em] uppercase text-gold-soft font-semibold">
-            Pradeep Malhotra Presents
+          <p className="mt-4 text-xs sm:text-sm tracking-[0.3em] uppercase text-white/50 font-light mb-6">
+            An Exclusive Full-Day
           </p>
           
-          <h2 className="mt-3 font-serif text-4xl sm:text-5xl lg:text-7xl leading-[1.05] font-medium">
-            Yeh Din <span className="text-gradient-gold">Anjaan Nahi</span>
+          <h2 className="font-serif text-6xl sm:text-7xl lg:text-[110px] leading-[0.95] font-normal text-transparent bg-clip-text bg-gradient-to-b from-white via-[#F2DE89] to-[#8C6D23] mb-10 pb-4">
+            ASTROLOGY<br/>SEMINAR
           </h2>
           
-          <p className="mt-4 text-gradient-gold tracking-widest uppercase text-xs sm:text-sm font-semibold max-w-xl mx-auto">
-            The Side of Astrology That Lives In Your Everyday
+          <p className="text-[#D4AF37]/90 text-xl sm:text-2xl font-light tracking-wide max-w-3xl mx-auto font-serif italic">
+            "Decode the secrets of your destiny with timeless wisdom."
           </p>
-          
-          <div className="gold-divider mx-auto my-8 w-28" />
         </div>
 
-        {/* Main Grid */}
-        <div className="sem-grid mt-16 grid lg:grid-cols-12 gap-8 lg:gap-10 items-stretch">
+        {/* Main Grid: Cardless & Elegant */}
+        <div className="sem-grid flex flex-col lg:flex-row items-center justify-between gap-16 lg:gap-24 mt-12 relative z-10">
           
-          {/* Left: Agenda & Content (7 Cols) */}
-          <div className="sem-card lg:col-span-7 bg-navy-soft/30 border border-gold/20 rounded-3xl p-8 lg:p-10 shadow-elegant flex flex-col justify-between">
-            <div>
-              <h3 className="font-serif text-2xl lg:text-3xl text-gradient-gold mb-8 font-semibold flex items-center gap-2">
-                <span>✦</span> Why This Seminar is Your Answer
-              </h3>
+          {/* Left: Content Flow */}
+          <div className="flex-1 w-full sem-item">
+            
+            {/* Event Logistics Flow */}
+            <div className="flex flex-col gap-10 mb-12 relative">
+              {/* Elegant Vertical Line */}
+              <div className="absolute left-0 top-3 bottom-3 w-px bg-gradient-to-b from-[#D4AF37] via-[#D4AF37]/30 to-transparent"></div>
               
-              <div className="space-y-8">
-                {agendaPoints.map((point, index) => (
-                  <div key={index} className="flex gap-4 items-start group">
-                    <div className="w-8 h-8 rounded-full bg-gold/10 border border-gold/20 flex items-center justify-center shrink-0 mt-1 group-hover:bg-gold-gradient group-hover:text-navy-deep transition-all duration-300">
-                      <span className="text-xs font-semibold text-gold group-hover:text-navy-deep">0{index + 1}</span>
-                    </div>
-                    <div>
-                      <h4 className="text-base sm:text-lg font-semibold text-ivory group-hover:text-gold transition-colors duration-300">
-                        {point.title}
-                      </h4>
-                      <p className="mt-1.5 text-sm text-ivory/70 leading-relaxed">
-                        {point.description}
-                      </p>
-                    </div>
-                  </div>
-                ))}
+              <div className="pl-10">
+                <div className="text-[10px] tracking-[0.3em] text-[#D4AF37] uppercase mb-3">Date</div>
+                <div className="font-serif text-4xl sm:text-5xl text-white font-light tracking-wide">20 June 2026</div>
+                <div className="text-white/50 mt-2 font-light tracking-[0.1em] uppercase text-xs">Starting 10:00 AM</div>
+              </div>
+
+              <div className="pl-10">
+                <div className="text-[10px] tracking-[0.3em] text-[#D4AF37] uppercase mb-3">Venue</div>
+                <div className="font-serif text-3xl sm:text-4xl text-white font-light tracking-wide">Vivanta New Delhi</div>
+                <div className="text-white/50 mt-2 font-light tracking-[0.2em] uppercase text-xs">Dwarka</div>
               </div>
             </div>
-            
-            <div className="mt-10 pt-6 border-t border-gold/10 text-center">
-              <span className="inline-block text-gold font-serif italic text-lg tracking-wider">
-                "This seminar is designed to change how you look at your days, forever."
-              </span>
+
+            <div className="mb-10 flex items-center gap-6">
+               <h3 className="text-xs text-[#D4AF37] font-medium tracking-[0.3em] uppercase">
+                  Seminar Highlights
+               </h3>
+               <div className="flex-1 h-px bg-gradient-to-r from-[#D4AF37]/30 to-transparent"></div>
             </div>
+            
+            <div className="space-y-6">
+              {highlights.map((highlight, index) => (
+                <div key={index} className="flex gap-6 items-center group">
+                  <span className="text-[#D4AF37]/40 text-[10px] group-hover:text-[#D4AF37] transition-colors duration-500">✦</span>
+                  <h4 className="text-lg sm:text-xl font-light text-white/80 tracking-wide group-hover:text-white transition-colors duration-500">
+                    {highlight}
+                  </h4>
+                </div>
+              ))}
+            </div>
+
           </div>
 
-          {/* Right: Unified Details & Booking (5 Cols) */}
-          <div className="sem-card lg:col-span-5 bg-navy-soft/50 border-2 border-gold/40 rounded-3xl p-8 shadow-gold/10 shadow-2xl relative overflow-hidden flex flex-col justify-between">
-            <div className="absolute -top-20 -right-20 w-60 h-60 bg-gold/10 rounded-full blur-3xl" />
+          {/* Right: Astrologer Profile Floating */}
+          <div className="w-full lg:w-[480px] shrink-0 sem-item relative flex flex-col items-center">
+            {/* Deep Back glow */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[140%] h-[140%] bg-[#D4AF37]/5 rounded-full blur-[120px] pointer-events-none -z-10" />
             
-            <div className="relative space-y-6">
-              
-              {/* Seats Left Notification */}
-              <div className="flex items-center gap-2.5 bg-red-600/10 border border-red-500/30 rounded-2xl px-4 py-3 text-red-200">
-                <Flame className="w-5 h-5 text-red-400 shrink-0 animate-pulse" />
-                <span className="text-xs sm:text-sm font-semibold tracking-wide uppercase">
-                  ONLY 10 SEATS AVAILABLE IN TOTAL
-                </span>
-              </div>
-
-              {/* Pricing Callout */}
-              <div className="p-6 rounded-2xl bg-gold/5 border border-gold/20 space-y-3 relative overflow-hidden">
-                <div className="absolute top-3 right-3 bg-red-500 text-ivory text-[9px] uppercase tracking-widest font-bold px-2.5 py-1 rounded-full animate-bounce">
-                  Save 53%
-                </div>
+            {/* Elegant Image Frame */}
+            <div className="relative w-full rounded-t-[1000px] rounded-b-[40px] border border-[#D4AF37]/20 p-2.5 bg-[#111F3A]/20 backdrop-blur-md shadow-[0_0_60px_rgba(212,175,55,0.05)]">
+              <div className="relative rounded-t-[1000px] rounded-b-[32px] overflow-hidden aspect-[4/5] bg-[#0A1121]">
+                <img 
+                  src={pradeepImage} 
+                  alt="Astrologer Pradeep Malhotra" 
+                  className="w-full h-full object-cover object-top opacity-80 hover:opacity-100 transition-opacity duration-1000"
+                />
                 
-                <div className="text-xs uppercase tracking-widest text-gold-soft font-semibold">Special Booking Offer</div>
+                {/* Overlay gradient at bottom to blend image softly */}
+                <div className="absolute inset-x-0 bottom-0 h-3/4 bg-gradient-to-t from-[#050914] via-[#050914]/80 to-transparent"></div>
                 
-                <div className="flex items-baseline gap-3">
-                  <span className="text-4xl sm:text-5xl font-serif text-gold font-bold">₹5,100</span>
-                  <span className="text-base text-ivory/50 line-through">₹11,000</span>
-                </div>
-                
-                <p className="text-xs text-ivory/70 leading-tight">
-                  <span className="text-gold font-semibold">First 10 Seats Only.</span> Normal seat pricing of ₹11,000 applies once early slots are filled.
-                </p>
-              </div>
-
-              {/* Event Logistics */}
-              <div className="space-y-4 pt-2">
-                <div className="flex gap-4 items-center">
-                  <div className="w-10 h-10 rounded-xl bg-gold/10 border border-gold/20 flex items-center justify-center shrink-0">
-                    <Calendar className="w-5 h-5 text-gold" />
-                  </div>
-                  <div>
-                    <div className="text-[10px] uppercase tracking-widest text-gold-soft font-semibold">Date & Time</div>
-                    <div className="text-sm font-semibold text-ivory">20th June 2026, Starting 10:00 AM</div>
-                  </div>
-                </div>
-
-                <div className="flex gap-4 items-center">
-                  <div className="w-10 h-10 rounded-xl bg-gold/10 border border-gold/20 flex items-center justify-center shrink-0">
-                    <MapPin className="w-5 h-5 text-gold" />
-                  </div>
-                  <div>
-                    <div className="text-[10px] uppercase tracking-widest text-gold-soft font-semibold">Venue</div>
-                    <div className="text-sm font-semibold text-ivory">Vivanta New Delhi, Dwarka (5-Star)</div>
-                  </div>
+                {/* Floating details inside image bottom */}
+                <div className="absolute bottom-10 inset-x-0 text-center px-6">
+                  <div className="text-[9px] tracking-[0.4em] uppercase text-[#D4AF37]/80 mb-3">With Astrologer</div>
+                  <h3 className="font-serif text-4xl text-white uppercase tracking-widest drop-shadow-2xl">
+                    Pradeep<br/>Malhotra
+                  </h3>
                 </div>
               </div>
-
-              {/* Inclusions */}
-              <div className="border-t border-gold/10 pt-5 space-y-3">
-                <div className="text-[10px] uppercase tracking-widest text-gold-soft font-semibold">What's Included:</div>
-                <ul className="space-y-2.5">
-                  {inclusions.map((inc, index) => (
-                    <li key={index} className="flex items-center gap-3 text-sm text-ivory/80">
-                      <inc.icon className="w-4 h-4 text-gold shrink-0" />
-                      <span>{inc.text}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
             </div>
 
-            {/* Booking Action */}
-            <div className="mt-8 pt-5 border-t border-gold/10 relative z-10">
+            {/* Action Area Below Image */}
+            <div className="mt-12 w-full flex flex-col items-center gap-8">
+              <div className="flex items-center gap-4 text-[#D4AF37]/80">
+                <Flame className="w-3.5 h-3.5 animate-pulse" />
+                <span className="text-[10px] font-medium tracking-[0.3em] uppercase">Limited Seats Available</span>
+                <Flame className="w-3.5 h-3.5 animate-pulse" />
+              </div>
+              
               <a
                 href={whatsappLink}
                 target="_blank"
                 rel="noreferrer"
-                className="w-full inline-flex items-center justify-center gap-3 py-4 rounded-full bg-gold-gradient text-navy-deep font-bold shadow-gold hover:shadow-gold-lg hover:scale-[1.02] active:scale-[0.98] transition-all"
+                className="w-full relative group overflow-hidden inline-flex items-center justify-center py-5 rounded-full bg-transparent border border-[#D4AF37]/50 text-[#D4AF37] hover:border-[#D4AF37] font-medium transition-all duration-500 uppercase tracking-[0.25em] text-sm shadow-[0_0_30px_rgba(212,175,55,0)] hover:shadow-[0_0_30px_rgba(212,175,55,0.2)]"
               >
-                <WhatsAppIcon className="w-5 h-5" />
-                Book Your Seat Now
+                <div className="absolute inset-0 bg-gradient-to-r from-[#B48A28] via-[#D4AF37] to-[#B48A28] opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-out z-0"></div>
+                <span className="relative z-10 group-hover:text-[#050914] transition-colors duration-500 font-semibold">Register Now</span>
               </a>
-              <p className="text-[10px] text-center text-ivory/50 mt-3 leading-tight">
-                Secure your seat instantly. You'll be redirected to WhatsApp to confirm details.
-              </p>
             </div>
 
           </div>
