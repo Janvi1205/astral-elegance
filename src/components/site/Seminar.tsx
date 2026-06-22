@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { Flame } from "lucide-react";
+import { Flame, Calendar, MapPin, Utensils } from "lucide-react";
 import pradeepImage from "../../assets/pradeep-astrologer.png";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -12,8 +12,7 @@ const highlights = [
   "How to Study & Interpret a Birth Chart",
   "Does Shani Sade Sati Really Work?",
   "The Truth About Manglik, Pitra & Kaal Sarp Dosh",
-  "How to Assess Wealth Potential Through Astrology",
-  "Exclusive 2-Hour Live Q&A Session"
+  "How to Assess Wealth Potential Through Astrology"
 ];
 
 export const Seminar = () => {
@@ -51,7 +50,7 @@ export const Seminar = () => {
   }, []);
 
   const whatsappLink = `https://api.whatsapp.com/send?phone=${WHATSAPP_NUMBER}&text=${encodeURIComponent(
-    'Hello Pradeep Ji, I would like to register for the Astrology Seminar on 20th June 2026. Please share the booking details.'
+    'Hello Pradeep Ji, I would like to register for the Astrology Seminar on 29th June 2026. Please share the booking details.'
   )}`;
 
   return (
@@ -78,7 +77,7 @@ export const Seminar = () => {
           </div>
           
           <p className="mt-4 text-xs sm:text-sm tracking-[0.3em] uppercase text-white/50 font-light mb-6">
-            An Exclusive Full-Day
+            An Exclusive Evening
           </p>
           
           <h2 className="font-serif text-6xl sm:text-7xl lg:text-[110px] leading-[0.95] font-normal text-transparent bg-clip-text bg-gradient-to-b from-white via-[#F2DE89] to-[#8C6D23] mb-10 pb-4">
@@ -90,52 +89,132 @@ export const Seminar = () => {
           </p>
         </div>
 
+        {/* Logistics Cards Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16 relative z-10">
+          {/* Date & Time */}
+          <div className="relative overflow-hidden rounded-2xl border border-[#D4AF37]/15 bg-[#111F3A]/10 backdrop-blur-sm p-6 flex items-start gap-4 hover:border-[#D4AF37]/35 transition-all duration-300 group">
+            <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-radial from-[#D4AF37]/5 to-transparent blur-xl pointer-events-none" />
+            <div className="flex-shrink-0 w-12 h-12 rounded-full border border-[#D4AF37]/20 bg-[#070B14] flex items-center justify-center text-[#D4AF37] group-hover:border-[#D4AF37]/40 transition-colors duration-300">
+              <Calendar className="w-5 h-5" />
+            </div>
+            <div>
+              <span className="text-[9px] tracking-[0.2em] uppercase text-[#D4AF37] font-medium">Date & Time</span>
+              <h3 className="font-serif text-lg sm:text-xl text-white font-light mt-1">29 June 2026</h3>
+              <p className="text-white/50 text-xs mt-1 font-light tracking-wide">7:00 PM - 9:00 PM</p>
+            </div>
+          </div>
+
+          {/* Venue */}
+          <div className="relative overflow-hidden rounded-2xl border border-[#D4AF37]/15 bg-[#111F3A]/10 backdrop-blur-sm p-6 flex items-start gap-4 hover:border-[#D4AF37]/35 transition-all duration-300 group">
+            <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-radial from-[#D4AF37]/5 to-transparent blur-xl pointer-events-none" />
+            <div className="flex-shrink-0 w-12 h-12 rounded-full border border-[#D4AF37]/20 bg-[#070B14] flex items-center justify-center text-[#D4AF37] group-hover:border-[#D4AF37]/40 transition-colors duration-300">
+              <MapPin className="w-5 h-5" />
+            </div>
+            <div>
+              <span className="text-[9px] tracking-[0.2em] uppercase text-[#D4AF37] font-medium">Venue</span>
+              <h3 className="font-serif text-lg sm:text-xl text-white font-light mt-1">Vivanta New Delhi</h3>
+              <p className="text-white/50 text-xs mt-1 font-light tracking-wide">Dwarka</p>
+            </div>
+          </div>
+
+          {/* Dinner */}
+          <div className="relative overflow-hidden rounded-2xl border border-[#D4AF37]/15 bg-[#111F3A]/10 backdrop-blur-sm p-6 flex items-start gap-4 hover:border-[#D4AF37]/35 transition-all duration-300 group">
+            <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-radial from-[#D4AF37]/5 to-transparent blur-xl pointer-events-none" />
+            <div className="flex-shrink-0 w-12 h-12 rounded-full border border-[#D4AF37]/20 bg-[#070B14] flex items-center justify-center text-[#D4AF37] group-hover:border-[#D4AF37]/40 transition-colors duration-300">
+              <Utensils className="w-5 h-5" />
+            </div>
+            <div>
+              <span className="text-[9px] tracking-[0.2em] uppercase text-[#D4AF37] font-medium">Dinner</span>
+              <h3 className="font-serif text-lg sm:text-xl text-white font-light mt-1">Dinner Provided</h3>
+              <p className="text-white/50 text-xs mt-1 font-light tracking-wide">Complimentary buffet served</p>
+            </div>
+          </div>
+        </div>
+
         {/* Main Grid: Cardless & Elegant */}
-        <div className="sem-grid flex flex-col lg:flex-row items-center justify-between gap-16 lg:gap-24 mt-12 relative z-10">
+        <div className="sem-grid flex flex-col lg:flex-row items-start justify-between gap-16 lg:gap-24 mt-12 relative z-10">
           
           {/* Left: Content Flow */}
           <div className="flex-1 w-full sem-item">
             
-            {/* Event Logistics Flow */}
-            <div className="flex flex-col gap-10 mb-12 relative">
-              {/* Elegant Vertical Line */}
-              <div className="absolute left-0 top-3 bottom-3 w-px bg-gradient-to-b from-[#D4AF37] via-[#D4AF37]/30 to-transparent"></div>
-              
-              <div className="pl-10">
-                <div className="text-[10px] tracking-[0.3em] text-[#D4AF37] uppercase mb-3">Date</div>
-                <div className="font-serif text-4xl sm:text-5xl text-white font-light tracking-wide">20 June 2026</div>
-                <div className="text-white/50 mt-2 font-light tracking-[0.1em] uppercase text-xs">Starting 10:00 AM</div>
-              </div>
-
-              <div className="pl-10">
-                <div className="text-[10px] tracking-[0.3em] text-[#D4AF37] uppercase mb-3">Venue</div>
-                <div className="font-serif text-3xl sm:text-4xl text-white font-light tracking-wide">Vivanta New Delhi</div>
-                <div className="text-white/50 mt-2 font-light tracking-[0.2em] uppercase text-xs">Dwarka</div>
-              </div>
-            </div>
-
-            <div className="mb-10 flex items-center gap-6">
+            <div className="mb-8 flex items-center gap-6">
                <h3 className="text-xs text-[#D4AF37] font-medium tracking-[0.3em] uppercase">
                   Seminar Highlights
                </h3>
                <div className="flex-1 h-px bg-gradient-to-r from-[#D4AF37]/30 to-transparent"></div>
             </div>
             
-            <div className="space-y-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {highlights.map((highlight, index) => (
-                <div key={index} className="flex gap-6 items-center group">
-                  <span className="text-[#D4AF37]/40 text-[10px] group-hover:text-[#D4AF37] transition-colors duration-500">✦</span>
-                  <h4 className="text-lg sm:text-xl font-light text-white/80 tracking-wide group-hover:text-white transition-colors duration-500">
+                <div 
+                  key={index} 
+                  className="flex gap-4 items-center p-5 rounded-2xl border border-[#D4AF37]/10 bg-[#111F3A]/5 hover:border-[#D4AF37]/25 hover:bg-[#111F3A]/10 hover:shadow-[0_4px_20px_rgba(212,175,55,0.02)] transition-all duration-300 group"
+                >
+                  <span className="flex-shrink-0 w-8 h-8 rounded-full border border-[#D4AF37]/20 bg-[#070B14] flex items-center justify-center text-[#D4AF37]/60 group-hover:text-[#D4AF37] group-hover:border-[#D4AF37]/40 transition-all duration-300 text-xs font-mono font-bold">
+                    0{index + 1}
+                  </span>
+                  <h4 className="text-base sm:text-lg font-light text-white/80 tracking-wide group-hover:text-white transition-colors duration-300 leading-snug">
                     {highlight}
                   </h4>
                 </div>
               ))}
             </div>
 
+            {/* Distinguished Guests Card */}
+            <div className="mt-14 rounded-2xl border border-[#D4AF37]/15 bg-[#111F3A]/10 backdrop-blur-sm p-8 relative overflow-hidden">
+              {/* Subtle inner gold glow */}
+              <div className="absolute top-0 left-0 w-32 h-32 bg-gradient-radial from-[#D4AF37]/5 to-transparent blur-2xl pointer-events-none" />
+              
+              <div className="mb-8 flex items-center gap-6">
+                 <h3 className="text-xs text-[#D4AF37] font-medium tracking-[0.3em] uppercase">
+                    Distinguished Guests
+                 </h3>
+                 <div className="flex-1 h-px bg-gradient-to-r from-[#D4AF37]/20 to-transparent"></div>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-10 sm:gap-12 relative z-10">
+                 {/* Chief Guests */}
+                 <div className="space-y-6">
+                    <div className="flex items-center gap-3 border-b border-[#D4AF37]/10 pb-2">
+                      <span className="text-[#D4AF37] text-[10px]">✦</span>
+                      <h4 className="text-xs tracking-[0.3em] text-[#D4AF37] uppercase font-semibold">Chief Guests</h4>
+                    </div>
+                    <div className="space-y-5">
+                       <div className="hover:translate-x-1 transition-transform duration-300">
+                          <div className="font-serif text-lg text-white font-medium leading-snug">Dr. Arun Bansal</div>
+                          <div className="text-xs text-white/50 font-light mt-1.5 leading-relaxed">President, AIFAS; Chairman, Future Point</div>
+                       </div>
+                       <div className="hover:translate-x-1 transition-transform duration-300">
+                          <div className="font-serif text-lg text-white font-medium leading-snug">Mrs. Abha Bansal</div>
+                          <div className="text-xs text-white/50 font-light mt-1.5 leading-relaxed">Director, Future Point</div>
+                       </div>
+                    </div>
+                 </div>
+
+                 {/* Guest of Honour */}
+                 <div className="space-y-6 sm:pl-8 sm:border-l sm:border-[#D4AF37]/15">
+                    <div className="flex items-center gap-3 border-b border-[#D4AF37]/10 pb-2">
+                      <span className="text-[#D4AF37] text-[10px]">✦</span>
+                      <h4 className="text-xs tracking-[0.3em] text-[#D4AF37] uppercase font-semibold">Guest of Honour</h4>
+                    </div>
+                    <div className="space-y-5">
+                       <div className="hover:translate-x-1 transition-transform duration-300">
+                          <div className="font-serif text-lg text-white font-medium leading-snug">Mr. Daya Krishna Gupta</div>
+                          <div className="text-xs text-white/50 font-light mt-1.5 leading-relaxed">Master of Cuspal Theory</div>
+                       </div>
+                       <div className="hover:translate-x-1 transition-transform duration-300">
+                          <div className="font-serif text-lg text-white font-medium leading-snug">Mrs. Aakriti Gupta</div>
+                          <div className="text-xs text-white/50 font-light mt-1.5 leading-relaxed">Vedic Astrologer, Tarot Card Reader & Vaastu Consultant</div>
+                       </div>
+                    </div>
+                 </div>
+              </div>
+            </div>
+
           </div>
 
-          {/* Right: Astrologer Profile Floating */}
-          <div className="w-full lg:w-[480px] shrink-0 sem-item relative flex flex-col items-center">
+          {/* Right: Astrologer Profile Floating (Sticky) */}
+          <div className="w-full lg:w-[450px] shrink-0 sem-item relative flex flex-col items-center lg:sticky lg:top-28 self-start">
             {/* Deep Back glow */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[140%] h-[140%] bg-[#D4AF37]/5 rounded-full blur-[120px] pointer-events-none -z-10" />
             
