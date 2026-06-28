@@ -95,15 +95,7 @@ const Hero = () => {
           <div className="absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r from-navy-deep to-transparent pointer-events-none" />
           <div className="absolute inset-y-0 right-0 w-1/4 bg-gradient-to-l from-navy-deep to-transparent pointer-events-none" />
           
-          {/* Badge (floating above the transition) */}
-          <a
-            href="#seminar"
-            className="absolute bottom-6 left-1/2 -translate-x-1/2 hero-badge inline-flex items-center gap-2 px-4 py-2 rounded-full bg-red-600/20 border border-red-500/40 backdrop-blur-md whitespace-nowrap z-20 animate-pulse hover:bg-red-600/30 transition-colors"
-          >
-            <span className="text-[10px] tracking-[0.15em] font-semibold text-red-300">
-              🔥 LIVE SEMINAR • ONLY 10 SEATS AVAILABLE
-            </span>
-          </a>
+
         </div>
 
         <div className="container mt-4 text-center flex flex-col items-center">
@@ -127,12 +119,7 @@ const Hero = () => {
               <Sparkles className="w-4 h-4" />
               Book Now
             </a>
-            <a
-              href="#seminar"
-              className="hero-cta hero-cta-mobile inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full border border-gold/60 text-gold hover:bg-gold hover:text-navy-deep transition-all font-semibold"
-            >
-              <span>🔥 Join Seminar</span>
-            </a>
+
             <a
               href={WHATSAPP}
               target="_blank"
@@ -164,16 +151,7 @@ const Hero = () => {
       {/* ===== Desktop content (lg+ only) ===== */}
       <div className="hidden lg:flex container relative z-20 pt-32 pb-20 min-h-screen items-center">
         <div className="max-w-2xl relative z-30">
-          <div className="flex flex-wrap gap-3 items-center">
-            <a
-              href="#seminar"
-              className="hero-badge inline-flex items-center gap-2 px-4 py-2 rounded-full bg-red-600/20 border border-red-500/40 backdrop-blur-md hover:bg-red-600/30 transition-all animate-pulse"
-            >
-              <span className="text-xs tracking-[0.15em] font-semibold text-red-300">
-                🔥 LIVE SEMINAR • ONLY 10 SEATS AVAILABLE
-              </span>
-            </a>
-          </div>
+
 
           <h1 className="mt-7 font-serif leading-[1.05] text-ivory">
             <span className="hero-title-line block text-6xl lg:text-7xl font-medium">Align Your Life</span>
@@ -194,12 +172,7 @@ const Hero = () => {
               <Sparkles className="w-4 h-4" />
               Book My Consultation
             </a>
-            <a
-              href="#seminar"
-              className="hero-cta hero-cta-desktop group inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full border border-gold/60 text-gold hover:bg-gold hover:text-navy-deep transition-all relative z-50 opacity-100 font-semibold"
-            >
-              <span>🔥 Join Seminar</span>
-            </a>
+
             <a
               href={WHATSAPP}
               target="_blank"
